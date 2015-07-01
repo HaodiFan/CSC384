@@ -1,0 +1,858 @@
+Jobs:
+['Job0', 'loc1', 620, 'loc2', 2259, [[698, 39]]]
+['Job1', 'loc5', 470, 'loc4', 776, [[511, 37], [625, 14]]]
+['Job2', 'loc0', 764, 'loc5', 2182, [[827, 25], [940, 1]]]
+['Job3', 'loc3', 810, 'loc0', 4577, [[943, 30], [969, 13], [1022, 2]]]
+['Job4', 'loc5', 468, 'loc6', 3144, [[606, 44], [724, 35], [824, 13]]]
+['Job5', 'loc1', 432, 'loc6', 1419, [[497, 28], [578, 17], [665, 1]]]
+['Job6', 'loc5', 927, 'loc2', 337, [[978, 41]]]
+['Job7', 'loc5', 987, 'loc6', 3305, [[1075, 36]]]
+['Job8', 'loc3', 590, 'loc0', 2460, [[701, 33], [779, 10]]]
+['Job9', 'loc1', 864, 'loc2', 2044, [[905, 30], [921, 10]]]
+Map
+Locations: ['loc0', 'loc1', 'loc2', 'loc3', 'loc4', 'loc5', 'loc6']
+Distances:
+loc0  <==>  loc1  =  12  mins.
+loc0  <==>  loc2  =  37  mins.
+loc0  <==>  loc3  =  36  mins.
+loc0  <==>  loc4  =  54  mins.
+loc0  <==>  loc5  =  35  mins.
+loc0  <==>  loc6  =  8  mins.
+loc1  <==>  loc2  =  34  mins.
+loc1  <==>  loc3  =  33  mins.
+loc1  <==>  loc4  =  44  mins.
+loc1  <==>  loc5  =  30  mins.
+loc1  <==>  loc6  =  7  mins.
+loc2  <==>  loc3  =  3  mins.
+loc2  <==>  loc4  =  33  mins.
+loc2  <==>  loc5  =  6  mins.
+loc2  <==>  loc6  =  30  mins.
+loc3  <==>  loc4  =  36  mins.
+loc3  <==>  loc5  =  9  mins.
+loc3  <==>  loc6  =  29  mins.
+loc4  <==>  loc5  =  28  mins.
+loc4  <==>  loc6  =  46  mins.
+loc5  <==>  loc6  =  28  mins.
+Start State:
+Action= "START", S0, g-value = 0, (Initial State)
+    Carrying: [] (load 0 grams)
+    State time = 420 loc = home earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job3', 'Job4', 'Job5', 'Job6', 'Job7', 'Job8', 'Job9']
+
+========================================TEST 1==============================
+Start State has 10 successors. You should get same set of successors as below with same heuristic values
+ BUT THE ORDER YOUR PROGRAM PRINTS THEM MIGHT DIFFER!
+Successor state #1:
+Action= "first_pickup(Job0)", S1, g-value = 0, (From S0)
+    Carrying: ['Job0'] (load 2259 grams)
+    State time = 620 loc = loc1 earned so far = 0
+    Unstarted Jobs.['Job1', 'Job2', 'Job3', 'Job4', 'Job5', 'Job6', 'Job7', 'Job8', 'Job9']
+max heuristic =  37 sum heuristic =  73
+====
+
+Successor state #2:
+Action= "first_pickup(Job1)", S2, g-value = 0, (From S0)
+    Carrying: ['Job1'] (load 776 grams)
+    State time = 470 loc = loc5 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job2', 'Job3', 'Job4', 'Job5', 'Job6', 'Job7', 'Job8', 'Job9']
+max heuristic =  11 sum heuristic =  11
+====
+
+Successor state #3:
+Action= "first_pickup(Job2)", S3, g-value = 0, (From S0)
+    Carrying: ['Job2'] (load 2182 grams)
+    State time = 764 loc = loc0 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job5', 'Job6', 'Job7', 'Job8', 'Job9']
+max heuristic =  44 sum heuristic =  181
+====
+
+Successor state #4:
+Action= "first_pickup(Job3)", S4, g-value = 0, (From S0)
+    Carrying: ['Job3'] (load 4577 grams)
+    State time = 810 loc = loc3 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job4', 'Job5', 'Job6', 'Job7', 'Job8', 'Job9']
+max heuristic =  44 sum heuristic =  205
+====
+
+Successor state #5:
+Action= "first_pickup(Job4)", S5, g-value = 0, (From S0)
+    Carrying: ['Job4'] (load 3144 grams)
+    State time = 468 loc = loc5 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job3', 'Job5', 'Job6', 'Job7', 'Job8', 'Job9']
+max heuristic =  11 sum heuristic =  11
+====
+
+Successor state #6:
+Action= "first_pickup(Job5)", S6, g-value = 0, (From S0)
+    Carrying: ['Job5'] (load 1419 grams)
+    State time = 432 loc = loc1 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job3', 'Job4', 'Job6', 'Job7', 'Job8', 'Job9']
+max heuristic =  0 sum heuristic =  0
+====
+
+Successor state #7:
+Action= "first_pickup(Job6)", S7, g-value = 0, (From S0)
+    Carrying: ['Job6'] (load 337 grams)
+    State time = 927 loc = loc5 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job3', 'Job4', 'Job5', 'Job7', 'Job8', 'Job9']
+max heuristic =  44 sum heuristic =  264
+====
+
+Successor state #8:
+Action= "first_pickup(Job7)", S8, g-value = 0, (From S0)
+    Carrying: ['Job7'] (load 3305 grams)
+    State time = 987 loc = loc5 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job3', 'Job4', 'Job5', 'Job6', 'Job8', 'Job9']
+max heuristic =  44 sum heuristic =  307
+====
+
+Successor state #9:
+Action= "first_pickup(Job8)", S9, g-value = 0, (From S0)
+    Carrying: ['Job8'] (load 2460 grams)
+    State time = 590 loc = loc3 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job3', 'Job4', 'Job5', 'Job6', 'Job7', 'Job9']
+max heuristic =  37 sum heuristic =  73
+====
+
+Successor state #10:
+Action= "first_pickup(Job9)", S10, g-value = 0, (From S0)
+    Carrying: ['Job9'] (load 2044 grams)
+    State time = 864 loc = loc1 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job3', 'Job4', 'Job5', 'Job6', 'Job7', 'Job8']
+max heuristic =  44 sum heuristic =  205
+====
+
+
+========================================TEST 1==============================
+Picking state that arises from "first_pickup(Job2)"
+State found is
+Action= "first_pickup(Job2)", S3, g-value = 0, (From S0)
+    Carrying: ['Job2'] (load 2182 grams)
+    State time = 764 loc = loc0 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job5', 'Job6', 'Job7', 'Job8', 'Job9']
+max heuristic =  44 sum heuristic =  181
+
+The "first_pickup(Job2)" state has 6 successors listed below (YOUR ORDER MIGHT DIFFER)
+  NOTE THIS TESTING CODE WILL FAIL HERE IF YOU DID NOT PASS THE PREVIOUS TESTS
+
+Successor state #1:
+Action= "deliver(Job2)", S11, g-value = 0, (From S3)
+    Carrying: [] (load 0 grams)
+    State time = 799 loc = loc5 earned so far = 25
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job5', 'Job6', 'Job7', 'Job8', 'Job9']
+max heuristic =  44 sum heuristic =  181
+====
+
+Successor state #2:
+Action= "pickup(Job0)", S12, g-value = 0, (From S3)
+    Carrying: ['Job2', 'Job0'] (load 4441 grams)
+    State time = 776 loc = loc1 earned so far = 0
+    Unstarted Jobs.['Job1', 'Job3', 'Job4', 'Job5', 'Job6', 'Job7', 'Job8', 'Job9']
+max heuristic =  44 sum heuristic =  181
+====
+
+Successor state #3:
+Action= "pickup(Job3)", S13, g-value = 0, (From S3)
+    Carrying: ['Job2', 'Job3'] (load 6759 grams)
+    State time = 810 loc = loc3 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job4', 'Job5', 'Job6', 'Job7', 'Job8', 'Job9']
+max heuristic =  44 sum heuristic =  181
+====
+
+Successor state #4:
+Action= "pickup(Job5)", S14, g-value = 0, (From S3)
+    Carrying: ['Job2', 'Job5'] (load 3601 grams)
+    State time = 776 loc = loc1 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job6', 'Job7', 'Job8', 'Job9']
+max heuristic =  44 sum heuristic =  181
+====
+
+Successor state #5:
+Action= "pickup(Job8)", S15, g-value = 0, (From S3)
+    Carrying: ['Job2', 'Job8'] (load 4642 grams)
+    State time = 800 loc = loc3 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job5', 'Job6', 'Job7', 'Job9']
+max heuristic =  44 sum heuristic =  181
+====
+
+Successor state #6:
+Action= "pickup(Job9)", S16, g-value = 0, (From S3)
+    Carrying: ['Job2', 'Job9'] (load 4226 grams)
+    State time = 864 loc = loc1 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job5', 'Job6', 'Job7', 'Job8']
+max heuristic =  44 sum heuristic =  205
+====
+
+
+========================================TEST 2==============================
+Picking state that arises from "pickup(Job9)"
+State found is
+Action= "pickup(Job9)", S16, g-value = 0, (From S3)
+    Carrying: ['Job2', 'Job9'] (load 4226 grams)
+    State time = 864 loc = loc1 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job5', 'Job6', 'Job7', 'Job8']
+max heuristic =  44 sum heuristic =  205
+
+The "pickup(Job9)" state has 6 successors listed below (YOUR ORDER MIGHT DIFFER)
+  NOTE THIS TESTING CODE WILL FAIL HERE IF YOU DID NOT PASS THE PREVIOUS TESTS
+
+Successor state #1:
+Action= "deliver(Job2)", S17, g-value = 24, (From S16)
+    Carrying: ['Job9'] (load 2044 grams)
+    State time = 894 loc = loc5 earned so far = 1
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job5', 'Job6', 'Job7', 'Job8']
+max heuristic =  44 sum heuristic =  181
+====
+
+Successor state #2:
+Action= "deliver(Job9)", S18, g-value = 0, (From S16)
+    Carrying: ['Job2'] (load 2182 grams)
+    State time = 898 loc = loc2 earned so far = 30
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job5', 'Job6', 'Job7', 'Job8']
+max heuristic =  44 sum heuristic =  205
+====
+
+Successor state #3:
+Action= "pickup(Job0)", S19, g-value = 0, (From S16)
+    Carrying: ['Job2', 'Job9', 'Job0'] (load 6485 grams)
+    State time = 864 loc = loc1 earned so far = 0
+    Unstarted Jobs.['Job1', 'Job3', 'Job4', 'Job5', 'Job6', 'Job7', 'Job8']
+max heuristic =  44 sum heuristic =  205
+====
+
+Successor state #4:
+Action= "pickup(Job3)", S20, g-value = 0, (From S16)
+    Carrying: ['Job2', 'Job9', 'Job3'] (load 8803 grams)
+    State time = 897 loc = loc3 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job4', 'Job5', 'Job6', 'Job7', 'Job8']
+max heuristic =  44 sum heuristic =  205
+====
+
+Successor state #5:
+Action= "pickup(Job5)", S21, g-value = 0, (From S16)
+    Carrying: ['Job2', 'Job9', 'Job5'] (load 5645 grams)
+    State time = 864 loc = loc1 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job6', 'Job7', 'Job8']
+max heuristic =  44 sum heuristic =  205
+====
+
+Successor state #6:
+Action= "pickup(Job8)", S22, g-value = 0, (From S16)
+    Carrying: ['Job2', 'Job9', 'Job8'] (load 6686 grams)
+    State time = 897 loc = loc3 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job5', 'Job6', 'Job7']
+max heuristic =  44 sum heuristic =  205
+====
+
+
+========================================TEST 3==============================
+Picking state that arises from "pickup(Job8)"
+State found is
+Action= "pickup(Job8)", S22, g-value = 0, (From S16)
+    Carrying: ['Job2', 'Job9', 'Job8'] (load 6686 grams)
+    State time = 897 loc = loc3 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job5', 'Job6', 'Job7']
+max heuristic =  44 sum heuristic =  205
+
+The "pickup(Job8)" state has 5 successors listed below (YOUR ORDER MIGHT DIFFER)
+  NOTE THIS TESTING CODE WILL FAIL HERE IF YOU DID NOT PASS THE PREVIOUS TESTS
+
+Successor state #1:
+Action= "deliver(Job2)", S23, g-value = 24, (From S22)
+    Carrying: ['Job9', 'Job8'] (load 4504 grams)
+    State time = 906 loc = loc5 earned so far = 1
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job5', 'Job6', 'Job7']
+max heuristic =  44 sum heuristic =  218
+====
+
+Successor state #2:
+Action= "deliver(Job9)", S24, g-value = 0, (From S22)
+    Carrying: ['Job2', 'Job8'] (load 4642 grams)
+    State time = 900 loc = loc2 earned so far = 30
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job5', 'Job6', 'Job7']
+max heuristic =  44 sum heuristic =  205
+====
+
+Successor state #3:
+Action= "deliver(Job8)", S25, g-value = 33, (From S22)
+    Carrying: ['Job2', 'Job9'] (load 4226 grams)
+    State time = 933 loc = loc0 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job5', 'Job6', 'Job7']
+max heuristic =  44 sum heuristic =  231
+====
+
+Successor state #4:
+Action= "pickup(Job0)", S26, g-value = 0, (From S22)
+    Carrying: ['Job2', 'Job9', 'Job8', 'Job0'] (load 8945 grams)
+    State time = 930 loc = loc1 earned so far = 0
+    Unstarted Jobs.['Job1', 'Job3', 'Job4', 'Job5', 'Job6', 'Job7']
+max heuristic =  44 sum heuristic =  264
+====
+
+Successor state #5:
+Action= "pickup(Job5)", S27, g-value = 0, (From S22)
+    Carrying: ['Job2', 'Job9', 'Job8', 'Job5'] (load 8105 grams)
+    State time = 930 loc = loc1 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job6', 'Job7']
+max heuristic =  44 sum heuristic =  264
+====
+
+
+========================================TEST 4==============================
+Picking state that arises from "pickup(Job5)"
+State found is
+Action= "pickup(Job5)", S27, g-value = 0, (From S22)
+    Carrying: ['Job2', 'Job9', 'Job8', 'Job5'] (load 8105 grams)
+    State time = 930 loc = loc1 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job6', 'Job7']
+max heuristic =  44 sum heuristic =  264
+
+The "pickup(Job5)" state has 4 successors listed below (YOUR ORDER MIGHT DIFFER)
+  NOTE THIS TESTING CODE WILL FAIL HERE IF YOU DID NOT PASS THE PREVIOUS TESTS
+
+Successor state #1:
+Action= "deliver(Job2)", S28, g-value = 25, (From S27)
+    Carrying: ['Job9', 'Job8', 'Job5'] (load 5923 grams)
+    State time = 960 loc = loc5 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job6', 'Job7']
+max heuristic =  44 sum heuristic =  239
+====
+
+Successor state #2:
+Action= "deliver(Job9)", S29, g-value = 30, (From S27)
+    Carrying: ['Job2', 'Job8', 'Job5'] (load 6061 grams)
+    State time = 964 loc = loc2 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job6', 'Job7']
+max heuristic =  44 sum heuristic =  234
+====
+
+Successor state #3:
+Action= "deliver(Job8)", S30, g-value = 33, (From S27)
+    Carrying: ['Job2', 'Job9', 'Job5'] (load 5645 grams)
+    State time = 942 loc = loc0 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job6', 'Job7']
+max heuristic =  44 sum heuristic =  272
+====
+
+Successor state #4:
+Action= "deliver(Job5)", S31, g-value = 28, (From S27)
+    Carrying: ['Job2', 'Job9', 'Job8'] (load 6686 grams)
+    State time = 937 loc = loc6 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job6', 'Job7']
+max heuristic =  44 sum heuristic =  236
+====
+
+
+========================================TEST 5==============================
+Picking state that arises from "deliver(Job2)"
+State found is
+Action= "deliver(Job2)", S28, g-value = 25, (From S27)
+    Carrying: ['Job9', 'Job8', 'Job5'] (load 5923 grams)
+    State time = 960 loc = loc5 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job6', 'Job7']
+max heuristic =  44 sum heuristic =  239
+
+The "deliver(Job2)" state has 8 successors listed below (YOUR ORDER MIGHT DIFFER)
+  NOTE THIS TESTING CODE WILL FAIL HERE IF YOU DID NOT PASS THE PREVIOUS TESTS
+
+Successor state #1:
+Action= "deliver(Job9)", S32, g-value = 55, (From S28)
+    Carrying: ['Job8', 'Job5'] (load 3879 grams)
+    State time = 966 loc = loc2 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job6', 'Job7']
+max heuristic =  44 sum heuristic =  209
+====
+
+Successor state #2:
+Action= "deliver(Job8)", S33, g-value = 58, (From S28)
+    Carrying: ['Job9', 'Job5'] (load 3463 grams)
+    State time = 995 loc = loc0 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job6', 'Job7']
+max heuristic =  44 sum heuristic =  249
+====
+
+Successor state #3:
+Action= "deliver(Job5)", S34, g-value = 53, (From S28)
+    Carrying: ['Job9', 'Job8'] (load 4504 grams)
+    State time = 988 loc = loc6 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job6', 'Job7']
+max heuristic =  44 sum heuristic =  254
+====
+
+Successor state #4:
+Action= "pickup(Job0)", S35, g-value = 25, (From S28)
+    Carrying: ['Job9', 'Job8', 'Job5', 'Job0'] (load 8182 grams)
+    State time = 990 loc = loc1 earned so far = 0
+    Unstarted Jobs.['Job1', 'Job3', 'Job4', 'Job6', 'Job7']
+max heuristic =  44 sum heuristic =  282
+====
+
+Successor state #5:
+Action= "pickup(Job1)", S36, g-value = 25, (From S28)
+    Carrying: ['Job9', 'Job8', 'Job5', 'Job1'] (load 6699 grams)
+    State time = 960 loc = loc5 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job3', 'Job4', 'Job6', 'Job7']
+max heuristic =  44 sum heuristic =  239
+====
+
+Successor state #6:
+Action= "pickup(Job4)", S37, g-value = 25, (From S28)
+    Carrying: ['Job9', 'Job8', 'Job5', 'Job4'] (load 9067 grams)
+    State time = 960 loc = loc5 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job6', 'Job7']
+max heuristic =  44 sum heuristic =  239
+====
+
+Successor state #7:
+Action= "pickup(Job6)", S38, g-value = 25, (From S28)
+    Carrying: ['Job9', 'Job8', 'Job5', 'Job6'] (load 6260 grams)
+    State time = 960 loc = loc5 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job7']
+max heuristic =  44 sum heuristic =  239
+====
+
+Successor state #8:
+Action= "pickup(Job7)", S39, g-value = 25, (From S28)
+    Carrying: ['Job9', 'Job8', 'Job5', 'Job7'] (load 9228 grams)
+    State time = 987 loc = loc5 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job6']
+max heuristic =  44 sum heuristic =  282
+====
+
+
+========================================TEST 6==============================
+Picking state that arises from "pickup(Job7)"
+State found is
+Action= "pickup(Job7)", S39, g-value = 25, (From S28)
+    Carrying: ['Job9', 'Job8', 'Job5', 'Job7'] (load 9228 grams)
+    State time = 987 loc = loc5 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job6']
+max heuristic =  44 sum heuristic =  282
+
+The "pickup(Job7)" state has 5 successors listed below (YOUR ORDER MIGHT DIFFER)
+  NOTE THIS TESTING CODE WILL FAIL HERE IF YOU DID NOT PASS THE PREVIOUS TESTS
+
+Successor state #1:
+Action= "deliver(Job9)", S40, g-value = 55, (From S39)
+    Carrying: ['Job8', 'Job5', 'Job7'] (load 7184 grams)
+    State time = 993 loc = loc2 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job6']
+max heuristic =  44 sum heuristic =  252
+====
+
+Successor state #2:
+Action= "deliver(Job8)", S41, g-value = 58, (From S39)
+    Carrying: ['Job9', 'Job5', 'Job7'] (load 6768 grams)
+    State time = 1022 loc = loc0 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job6']
+max heuristic =  44 sum heuristic =  249
+====
+
+Successor state #3:
+Action= "deliver(Job5)", S42, g-value = 53, (From S39)
+    Carrying: ['Job9', 'Job8', 'Job7'] (load 7809 grams)
+    State time = 1015 loc = loc6 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job6']
+max heuristic =  44 sum heuristic =  254
+====
+
+Successor state #4:
+Action= "deliver(Job7)", S43, g-value = 25, (From S39)
+    Carrying: ['Job9', 'Job8', 'Job5'] (load 5923 grams)
+    State time = 1015 loc = loc6 earned so far = 36
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job6']
+max heuristic =  44 sum heuristic =  282
+====
+
+Successor state #5:
+Action= "pickup(Job6)", S44, g-value = 25, (From S39)
+    Carrying: ['Job9', 'Job8', 'Job5', 'Job7', 'Job6'] (load 9565 grams)
+    State time = 987 loc = loc5 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4']
+max heuristic =  44 sum heuristic =  282
+====
+
+
+========================================TEST 7==============================
+Picking state that arises from "deliver(Job8)"
+State found is
+Action= "deliver(Job8)", S41, g-value = 58, (From S39)
+    Carrying: ['Job9', 'Job5', 'Job7'] (load 6768 grams)
+    State time = 1022 loc = loc0 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job6']
+max heuristic =  44 sum heuristic =  249
+
+The "deliver(Job8)" state has 7 successors listed below (YOUR ORDER MIGHT DIFFER)
+  NOTE THIS TESTING CODE WILL FAIL HERE IF YOU DID NOT PASS THE PREVIOUS TESTS
+
+Successor state #1:
+Action= "deliver(Job9)", S45, g-value = 88, (From S41)
+    Carrying: ['Job5', 'Job7'] (load 4724 grams)
+    State time = 1059 loc = loc2 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job6']
+max heuristic =  44 sum heuristic =  255
+====
+
+Successor state #2:
+Action= "deliver(Job5)", S46, g-value = 86, (From S41)
+    Carrying: ['Job9', 'Job7'] (load 5349 grams)
+    State time = 1030 loc = loc6 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job6']
+max heuristic =  44 sum heuristic =  221
+====
+
+Successor state #3:
+Action= "deliver(Job7)", S47, g-value = 58, (From S41)
+    Carrying: ['Job9', 'Job5'] (load 3463 grams)
+    State time = 1030 loc = loc6 earned so far = 36
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job6']
+max heuristic =  44 sum heuristic =  249
+====
+
+Successor state #4:
+Action= "pickup(Job0)", S48, g-value = 58, (From S41)
+    Carrying: ['Job9', 'Job5', 'Job7', 'Job0'] (load 9027 grams)
+    State time = 1034 loc = loc1 earned so far = 0
+    Unstarted Jobs.['Job1', 'Job3', 'Job4', 'Job6']
+max heuristic =  44 sum heuristic =  249
+====
+
+Successor state #5:
+Action= "pickup(Job1)", S49, g-value = 58, (From S41)
+    Carrying: ['Job9', 'Job5', 'Job7', 'Job1'] (load 7544 grams)
+    State time = 1057 loc = loc5 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job3', 'Job4', 'Job6']
+max heuristic =  44 sum heuristic =  285
+====
+
+Successor state #6:
+Action= "pickup(Job4)", S50, g-value = 58, (From S41)
+    Carrying: ['Job9', 'Job5', 'Job7', 'Job4'] (load 9912 grams)
+    State time = 1057 loc = loc5 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job6']
+max heuristic =  44 sum heuristic =  285
+====
+
+Successor state #7:
+Action= "pickup(Job6)", S51, g-value = 58, (From S41)
+    Carrying: ['Job9', 'Job5', 'Job7', 'Job6'] (load 7105 grams)
+    State time = 1057 loc = loc5 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4']
+max heuristic =  44 sum heuristic =  285
+====
+
+
+========================================TEST 8==============================
+Picking state that arises from "deliver(Job9)"
+State found is
+Action= "deliver(Job9)", S45, g-value = 88, (From S41)
+    Carrying: ['Job5', 'Job7'] (load 4724 grams)
+    State time = 1059 loc = loc2 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job6']
+max heuristic =  44 sum heuristic =  255
+
+The "deliver(Job9)" state has 7 successors listed below (YOUR ORDER MIGHT DIFFER)
+  NOTE THIS TESTING CODE WILL FAIL HERE IF YOU DID NOT PASS THE PREVIOUS TESTS
+
+Successor state #1:
+Action= "deliver(Job5)", S52, g-value = 116, (From S45)
+    Carrying: ['Job7'] (load 3305 grams)
+    State time = 1089 loc = loc6 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job6']
+max heuristic =  44 sum heuristic =  227
+====
+
+Successor state #2:
+Action= "deliver(Job7)", S53, g-value = 124, (From S45)
+    Carrying: ['Job5'] (load 1419 grams)
+    State time = 1089 loc = loc6 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job6']
+max heuristic =  44 sum heuristic =  219
+====
+
+Successor state #3:
+Action= "pickup(Job0)", S54, g-value = 88, (From S45)
+    Carrying: ['Job5', 'Job7', 'Job0'] (load 6983 grams)
+    State time = 1093 loc = loc1 earned so far = 0
+    Unstarted Jobs.['Job1', 'Job3', 'Job4', 'Job6']
+max heuristic =  44 sum heuristic =  255
+====
+
+Successor state #4:
+Action= "pickup(Job1)", S55, g-value = 88, (From S45)
+    Carrying: ['Job5', 'Job7', 'Job1'] (load 5500 grams)
+    State time = 1065 loc = loc5 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job3', 'Job4', 'Job6']
+max heuristic =  44 sum heuristic =  255
+====
+
+Successor state #5:
+Action= "pickup(Job3)", S56, g-value = 88, (From S45)
+    Carrying: ['Job5', 'Job7', 'Job3'] (load 9301 grams)
+    State time = 1062 loc = loc3 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job4', 'Job6']
+max heuristic =  44 sum heuristic =  255
+====
+
+Successor state #6:
+Action= "pickup(Job4)", S57, g-value = 88, (From S45)
+    Carrying: ['Job5', 'Job7', 'Job4'] (load 7868 grams)
+    State time = 1065 loc = loc5 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job6']
+max heuristic =  44 sum heuristic =  255
+====
+
+Successor state #7:
+Action= "pickup(Job6)", S58, g-value = 88, (From S45)
+    Carrying: ['Job5', 'Job7', 'Job6'] (load 5061 grams)
+    State time = 1065 loc = loc5 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4']
+max heuristic =  44 sum heuristic =  255
+====
+
+
+========================================TEST 9==============================
+Picking state that arises from "deliver(Job5)"
+State found is
+Action= "deliver(Job5)", S52, g-value = 116, (From S45)
+    Carrying: ['Job7'] (load 3305 grams)
+    State time = 1089 loc = loc6 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job6']
+max heuristic =  44 sum heuristic =  227
+
+The "deliver(Job5)" state has 6 successors listed below (YOUR ORDER MIGHT DIFFER)
+  NOTE THIS TESTING CODE WILL FAIL HERE IF YOU DID NOT PASS THE PREVIOUS TESTS
+
+Successor state #1:
+Action= "deliver(Job7)", S59, g-value = 152, (From S52)
+    Carrying: [] (load 0 grams)
+    State time = 1089 loc = loc6 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job6']
+max heuristic =  44 sum heuristic =  191
+====
+
+Successor state #2:
+Action= "pickup(Job0)", S60, g-value = 116, (From S52)
+    Carrying: ['Job7', 'Job0'] (load 5564 grams)
+    State time = 1096 loc = loc1 earned so far = 0
+    Unstarted Jobs.['Job1', 'Job3', 'Job4', 'Job6']
+max heuristic =  44 sum heuristic =  227
+====
+
+Successor state #3:
+Action= "pickup(Job1)", S61, g-value = 116, (From S52)
+    Carrying: ['Job7', 'Job1'] (load 4081 grams)
+    State time = 1117 loc = loc5 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job3', 'Job4', 'Job6']
+max heuristic =  44 sum heuristic =  227
+====
+
+Successor state #4:
+Action= "pickup(Job3)", S62, g-value = 116, (From S52)
+    Carrying: ['Job7', 'Job3'] (load 7882 grams)
+    State time = 1118 loc = loc3 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job4', 'Job6']
+max heuristic =  44 sum heuristic =  227
+====
+
+Successor state #5:
+Action= "pickup(Job4)", S63, g-value = 116, (From S52)
+    Carrying: ['Job7', 'Job4'] (load 6449 grams)
+    State time = 1117 loc = loc5 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job6']
+max heuristic =  44 sum heuristic =  227
+====
+
+Successor state #6:
+Action= "pickup(Job6)", S64, g-value = 116, (From S52)
+    Carrying: ['Job7', 'Job6'] (load 3642 grams)
+    State time = 1117 loc = loc5 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4']
+max heuristic =  44 sum heuristic =  227
+====
+
+
+========================================TEST 10==============================
+Picking state that arises from "deliver(Job7)"
+State found is
+Action= "deliver(Job7)", S59, g-value = 152, (From S52)
+    Carrying: [] (load 0 grams)
+    State time = 1089 loc = loc6 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job6']
+max heuristic =  44 sum heuristic =  191
+
+The "deliver(Job7)" state has 5 successors listed below (YOUR ORDER MIGHT DIFFER)
+  NOTE THIS TESTING CODE WILL FAIL HERE IF YOU DID NOT PASS THE PREVIOUS TESTS
+
+Successor state #1:
+Action= "pickup(Job0)", S65, g-value = 152, (From S59)
+    Carrying: ['Job0'] (load 2259 grams)
+    State time = 1096 loc = loc1 earned so far = 0
+    Unstarted Jobs.['Job1', 'Job3', 'Job4', 'Job6']
+max heuristic =  44 sum heuristic =  191
+====
+
+Successor state #2:
+Action= "pickup(Job1)", S66, g-value = 152, (From S59)
+    Carrying: ['Job1'] (load 776 grams)
+    State time = 1117 loc = loc5 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job3', 'Job4', 'Job6']
+max heuristic =  44 sum heuristic =  191
+====
+
+Successor state #3:
+Action= "pickup(Job3)", S67, g-value = 152, (From S59)
+    Carrying: ['Job3'] (load 4577 grams)
+    State time = 1118 loc = loc3 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job4', 'Job6']
+max heuristic =  44 sum heuristic =  191
+====
+
+Successor state #4:
+Action= "pickup(Job4)", S68, g-value = 152, (From S59)
+    Carrying: ['Job4'] (load 3144 grams)
+    State time = 1117 loc = loc5 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job6']
+max heuristic =  44 sum heuristic =  191
+====
+
+Successor state #5:
+Action= "pickup(Job6)", S69, g-value = 152, (From S59)
+    Carrying: ['Job6'] (load 337 grams)
+    State time = 1117 loc = loc5 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4']
+max heuristic =  44 sum heuristic =  191
+====
+
+
+========================================TEST 11==============================
+Picking state that arises from "pickup(Job0)"
+State found is
+Action= "pickup(Job0)", S65, g-value = 152, (From S59)
+    Carrying: ['Job0'] (load 2259 grams)
+    State time = 1096 loc = loc1 earned so far = 0
+    Unstarted Jobs.['Job1', 'Job3', 'Job4', 'Job6']
+max heuristic =  44 sum heuristic =  191
+
+The "pickup(Job0)" state has 5 successors listed below (YOUR ORDER MIGHT DIFFER)
+  NOTE THIS TESTING CODE WILL FAIL HERE IF YOU DID NOT PASS THE PREVIOUS TESTS
+
+Successor state #1:
+Action= "deliver(Job0)", S70, g-value = 191, (From S65)
+    Carrying: [] (load 0 grams)
+    State time = 1130 loc = loc2 earned so far = 0
+    Unstarted Jobs.['Job1', 'Job3', 'Job4', 'Job6']
+max heuristic =  44 sum heuristic =  152
+====
+
+Successor state #2:
+Action= "pickup(Job1)", S71, g-value = 152, (From S65)
+    Carrying: ['Job0', 'Job1'] (load 3035 grams)
+    State time = 1126 loc = loc5 earned so far = 0
+    Unstarted Jobs.['Job3', 'Job4', 'Job6']
+max heuristic =  44 sum heuristic =  191
+====
+
+Successor state #3:
+Action= "pickup(Job3)", S72, g-value = 152, (From S65)
+    Carrying: ['Job0', 'Job3'] (load 6836 grams)
+    State time = 1129 loc = loc3 earned so far = 0
+    Unstarted Jobs.['Job1', 'Job4', 'Job6']
+max heuristic =  44 sum heuristic =  191
+====
+
+Successor state #4:
+Action= "pickup(Job4)", S73, g-value = 152, (From S65)
+    Carrying: ['Job0', 'Job4'] (load 5403 grams)
+    State time = 1126 loc = loc5 earned so far = 0
+    Unstarted Jobs.['Job1', 'Job3', 'Job6']
+max heuristic =  44 sum heuristic =  191
+====
+
+Successor state #5:
+Action= "pickup(Job6)", S74, g-value = 152, (From S65)
+    Carrying: ['Job0', 'Job6'] (load 2596 grams)
+    State time = 1126 loc = loc5 earned so far = 0
+    Unstarted Jobs.['Job1', 'Job3', 'Job4']
+max heuristic =  44 sum heuristic =  191
+====
+
+
+========================================TEST 12==============================
+Picking state that arises from "pickup(Job1)"
+State found is
+Action= "pickup(Job1)", S71, g-value = 152, (From S65)
+    Carrying: ['Job0', 'Job1'] (load 3035 grams)
+    State time = 1126 loc = loc5 earned so far = 0
+    Unstarted Jobs.['Job3', 'Job4', 'Job6']
+max heuristic =  44 sum heuristic =  191
+
+The "pickup(Job1)" state has 4 successors listed below (YOUR ORDER MIGHT DIFFER)
+  NOTE THIS TESTING CODE WILL FAIL HERE IF YOU DID NOT PASS THE PREVIOUS TESTS
+
+Successor state #1:
+Action= "deliver(Job0)", S75, g-value = 191, (From S71)
+    Carrying: ['Job1'] (load 776 grams)
+    State time = 1132 loc = loc2 earned so far = 0
+    Unstarted Jobs.['Job3', 'Job4', 'Job6']
+max heuristic =  44 sum heuristic =  152
+====
+
+Successor state #2:
+Action= "pickup(Job3)", S76, g-value = 152, (From S71)
+    Carrying: ['Job0', 'Job1', 'Job3'] (load 7612 grams)
+    State time = 1135 loc = loc3 earned so far = 0
+    Unstarted Jobs.['Job4', 'Job6']
+max heuristic =  44 sum heuristic =  191
+====
+
+Successor state #3:
+Action= "pickup(Job4)", S77, g-value = 152, (From S71)
+    Carrying: ['Job0', 'Job1', 'Job4'] (load 6179 grams)
+    State time = 1126 loc = loc5 earned so far = 0
+    Unstarted Jobs.['Job3', 'Job6']
+max heuristic =  44 sum heuristic =  191
+====
+
+Successor state #4:
+Action= "pickup(Job6)", S78, g-value = 152, (From S71)
+    Carrying: ['Job0', 'Job1', 'Job6'] (load 3372 grams)
+    State time = 1126 loc = loc5 earned so far = 0
+    Unstarted Jobs.['Job3', 'Job4']
+max heuristic =  44 sum heuristic =  191
+====
+
+
+========================================TEST 13==============================
+Picking state that arises from "pickup(Job3)"
+State found is
+Action= "pickup(Job3)", S76, g-value = 152, (From S71)
+    Carrying: ['Job0', 'Job1', 'Job3'] (load 7612 grams)
+    State time = 1135 loc = loc3 earned so far = 0
+    Unstarted Jobs.['Job4', 'Job6']
+max heuristic =  44 sum heuristic =  191
+
+The "pickup(Job3)" state has 1 successors listed below (YOUR ORDER MIGHT DIFFER)
+  NOTE THIS TESTING CODE WILL FAIL HERE IF YOU DID NOT PASS THE PREVIOUS TESTS
+
+Successor state #1:
+Action= "deliver(Job0)", S79, g-value = 191, (From S76)
+    Carrying: ['Job1', 'Job3'] (load 5353 grams)
+    State time = 1138 loc = loc2 earned so far = 0
+    Unstarted Jobs.['Job4', 'Job6']
+max heuristic =  44 sum heuristic =  152
+====
+
+
+========================================TEST 14==============================
+Picking state that arises from "deliver(Job0)"
+State found is
+Action= "deliver(Job0)", S79, g-value = 191, (From S76)
+    Carrying: ['Job1', 'Job3'] (load 5353 grams)
+    State time = 1138 loc = loc2 earned so far = 0
+    Unstarted Jobs.['Job4', 'Job6']
+max heuristic =  44 sum heuristic =  152
+
+The "deliver(Job0)" state has 0 successors listed below (YOUR ORDER MIGHT DIFFER)
+  NOTE THIS TESTING CODE WILL FAIL HERE IF YOU DID NOT PASS THE PREVIOUS TESTS
+

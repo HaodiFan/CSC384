@@ -1,0 +1,71 @@
+Jobs:
+['Job0', 'loc1', 620, 'loc2', 2259, [[698, 39]]]
+['Job1', 'loc5', 470, 'loc4', 776, [[511, 37], [625, 14]]]
+['Job2', 'loc0', 764, 'loc5', 2182, [[827, 25], [940, 1]]]
+['Job3', 'loc3', 810, 'loc0', 4577, [[943, 30], [969, 13], [1022, 2]]]
+['Job4', 'loc5', 468, 'loc6', 3144, [[606, 44], [724, 35], [824, 13]]]
+['Job5', 'loc1', 432, 'loc6', 1419, [[497, 28], [578, 17], [665, 1]]]
+['Job6', 'loc5', 927, 'loc2', 337, [[978, 41]]]
+['Job7', 'loc5', 987, 'loc6', 3305, [[1075, 36]]]
+['Job8', 'loc3', 590, 'loc0', 2460, [[701, 33], [779, 10]]]
+['Job9', 'loc1', 864, 'loc2', 2044, [[905, 30], [921, 10]]]
+
+Map
+Locations: ['loc0', 'loc1', 'loc2', 'loc3', 'loc4', 'loc5', 'loc6']
+Distances:
+loc0  <==>  loc1  =  12  mins.
+loc0  <==>  loc2  =  37  mins.
+loc0  <==>  loc3  =  36  mins.
+loc0  <==>  loc4  =  54  mins.
+loc0  <==>  loc5  =  35  mins.
+loc0  <==>  loc6  =  8  mins.
+loc1  <==>  loc2  =  34  mins.
+loc1  <==>  loc3  =  33  mins.
+loc1  <==>  loc4  =  44  mins.
+loc1  <==>  loc5  =  30  mins.
+loc1  <==>  loc6  =  7  mins.
+loc2  <==>  loc3  =  3  mins.
+loc2  <==>  loc4  =  33  mins.
+loc2  <==>  loc5  =  6  mins.
+loc2  <==>  loc6  =  30  mins.
+loc3  <==>  loc4  =  36  mins.
+loc3  <==>  loc5  =  9  mins.
+loc3  <==>  loc6  =  29  mins.
+loc4  <==>  loc5  =  28  mins.
+loc4  <==>  loc6  =  46  mins.
+loc5  <==>  loc6  =  28  mins.
+
+Say you are in a state where
+
+state time = 864
+Location = loc1
+Jobs being carried = ['Job2', 'Job9']
+Unstarted Jobs = ['Job0', 'Job1', 'Job3', 'Job4', 'Job5', 'Job6', 'Job7', 'Job8']
+
+Job2 needs to be delivered to loc5
+loc1 --> loc5 takes 30
+Earliest deliver time for Job2 = 864+30 = 894
+  This delivery will earn 1, the max to be earned by job2 is 25, so the lost revenue for job2 in 24
+
+Job9 needs to be delivered to loc2
+loc1 --> loc2 takes 34
+Earliest deliver time for Job9 = 898
+  This delivery will earn 30, the max to be earned by job2 is 30, so the lost revenue for job9 is 0
+
+
+Job7 has not yet been started it is to be picked up at loc5 (the heuristic ignores the fact that you can't
+pickup Job7 at loc5 since you are carrying Job2 which is to be delivered to loc5)
+loc1 --> loc5 takes 30
+You can arrive at 864+30 = 894
+But Job7 is not ready until 987
+Then Job7 is to be delivered to loc6
+loc5 --> loc6 takes 28 mins
+So earliest delivery time for job7 = 987+28 = 1015
+  this delivery will earn 36, the max to be earned by job7 is 36, so the lost revenue for job7 is 0
+
+
+The max and sum heuristics compute the lost revenue for each unfinished job (jobs being carried and jobs
+not yet started)
+
+max returns the maximum lost revenue 
+sum returns the sum of the lost revenues

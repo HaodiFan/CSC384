@@ -1,0 +1,1268 @@
+=======================================================
+    Test 0
+=======================================================
+   map = [['loc0', 'loc1', 'loc2', 'loc3', 'loc4', 'loc5', 'loc6', 'loc7', 'loc8'], [['loc0', 'loc1', 33], ['loc0', 'loc2', 6], ['loc0', 'loc3', 28], ['loc0', 'loc4', 7], ['loc0', 'loc5', 47], ['loc0', 'loc6', 21], ['loc0', 'loc7', 7], ['loc0', 'loc8', 22], ['loc1', 'loc2', 39], ['loc1', 'loc3', 31], ['loc1', 'loc4', 39], ['loc1', 'loc5', 16], ['loc1', 'loc6', 39], ['loc1', 'loc7', 26], ['loc1', 'loc8', 18], ['loc2', 'loc3', 32], ['loc2', 'loc4', 5], ['loc2', 'loc5', 52], ['loc2', 'loc6', 22], ['loc2', 'loc7', 13], ['loc2', 'loc8', 27], ['loc3', 'loc4', 28], ['loc3', 'loc5', 47], ['loc3', 'loc6', 48], ['loc3', 'loc7', 25], ['loc3', 'loc8', 14], ['loc4', 'loc5', 53], ['loc4', 'loc6', 26], ['loc4', 'loc7', 13], ['loc4', 'loc8', 25], ['loc5', 'loc6', 46], ['loc5', 'loc7', 40], ['loc5', 'loc8', 34], ['loc6', 'loc7', 23], ['loc6', 'loc8', 36], ['loc7', 'loc8', 15]]]
+   jobs = [['Job0', 'loc3', 444, 'loc5', 4757, [[553, 33], [659, 26], [683, 5]]], ['Job1', 'loc2', 844, 'loc0', 803, [[891, 25], [1007, 12]]], ['Job2', 'loc7', 537, 'loc3', 3180, [[599, 33]]], ['Job3', 'loc6', 473, 'loc2', 643, [[553, 41], [652, 35], [697, 24]]]]
+Search Successful!
+   Strategy = 'astar with full cycle checking'
+   Solution cost = 6
+   Goal state: Action= "deliver(Job1)", S614, g-value = 6, (From S610)
+    Carrying: [] (load 0 grams)
+    State time = 850 loc = loc0 earned so far = 126
+    Unstarted Jobs.[]
+----------------------------
+Solution Path:
+Action= "START", S0, g-value = 0, (Initial State)
+    Carrying: [] (load 0 grams)
+    State time = 420 loc = home earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job3']
+ ==> Action= "first_pickup(Job0)", S1, g-value = 0, (From S0)
+    Carrying: ['Job0'] (load 4757 grams)
+    State time = 444 loc = loc3 earned so far = 0
+    Unstarted Jobs.['Job1', 'Job2', 'Job3']
+ ==> Action= "deliver(Job0)", S5, g-value = 0, (From S1)
+    Carrying: [] (load 0 grams)
+    State time = 491 loc = loc5 earned so far = 33
+    Unstarted Jobs.['Job1', 'Job2', 'Job3']
+ ==> Action= "pickup(Job2)", S202, g-value = 0, (From S5)
+    Carrying: ['Job2'] (load 3180 grams)
+    State time = 537 loc = loc7 earned so far = 33
+    Unstarted Jobs.['Job1', 'Job3']
+ ==> Action= "deliver(Job2)", S209, g-value = 0, (From S202)
+    Carrying: [] (load 0 grams)
+    State time = 562 loc = loc3 earned so far = 66
+    Unstarted Jobs.['Job1', 'Job3']
+ ==> Action= "pickup(Job3)", S438, g-value = 0, (From S209)
+    Carrying: ['Job3'] (load 643 grams)
+    State time = 610 loc = loc6 earned so far = 66
+    Unstarted Jobs.['Job1']
+ ==> Action= "deliver(Job3)", S453, g-value = 6, (From S438)
+    Carrying: [] (load 0 grams)
+    State time = 632 loc = loc2 earned so far = 101
+    Unstarted Jobs.['Job1']
+ ==> Action= "pickup(Job1)", S610, g-value = 6, (From S453)
+    Carrying: ['Job1'] (load 803 grams)
+    State time = 844 loc = loc2 earned so far = 101
+    Unstarted Jobs.[]
+ ==> Action= "deliver(Job1)", S614, g-value = 6, (From S610)
+    Carrying: [] (load 0 grams)
+    State time = 850 loc = loc0 earned so far = 126
+    Unstarted Jobs.[]
+
+----------------------------
+Search time = 0.05, nodes expanded = 617, states generated = 617, states cycle check pruned = 0
+=======================================================
+    Test 1
+=======================================================
+   map = [['loc0', 'loc1', 'loc2', 'loc3', 'loc4', 'loc5', 'loc6', 'loc7', 'loc8', 'loc9'], [['loc0', 'loc1', 11], ['loc0', 'loc2', 40], ['loc0', 'loc3', 56], ['loc0', 'loc4', 45], ['loc0', 'loc5', 8], ['loc0', 'loc6', 41], ['loc0', 'loc7', 39], ['loc0', 'loc8', 30], ['loc0', 'loc9', 24], ['loc1', 'loc2', 31], ['loc1', 'loc3', 46], ['loc1', 'loc4', 35], ['loc1', 'loc5', 6], ['loc1', 'loc6', 32], ['loc1', 'loc7', 30], ['loc1', 'loc8', 22], ['loc1', 'loc9', 16], ['loc2', 'loc3', 19], ['loc2', 'loc4', 36], ['loc2', 'loc5', 36], ['loc2', 'loc6', 1], ['loc2', 'loc7', 4], ['loc2', 'loc8', 11], ['loc2', 'loc9', 15], ['loc3', 'loc4', 35], ['loc3', 'loc5', 51], ['loc3', 'loc6', 17], ['loc3', 'loc7', 17], ['loc3', 'loc8', 30], ['loc3', 'loc9', 33], ['loc4', 'loc5', 37], ['loc4', 'loc6', 35], ['loc4', 'loc7', 31], ['loc4', 'loc8', 39], ['loc4', 'loc9', 35], ['loc5', 'loc6', 38], ['loc5', 'loc7', 35], ['loc5', 'loc8', 28], ['loc5', 'loc9', 22], ['loc6', 'loc7', 4], ['loc6', 'loc8', 13], ['loc6', 'loc9', 17], ['loc7', 'loc8', 13], ['loc7', 'loc9', 16], ['loc8', 'loc9', 6]]]
+   jobs = [['Job0', 'loc4', 724, 'loc6', 2401, [[783, 36], [864, 16], [945, 8]]], ['Job1', 'loc1', 829, 'loc6', 4444, [[912, 32], [988, 27], [996, 15], [1112, 2]]], ['Job2', 'loc2', 552, 'loc4', 2179, [[612, 43], [661, 31]]], ['Job3', 'loc9', 938, 'loc2', 4139, [[977, 29], [1088, 6]]], ['Job4', 'loc0', 857, 'loc4', 1031, [[954, 35], [1030, 20], [1101, 9]]], ['Job5', 'loc8', 679, 'loc0', 1942, [[727, 31], [799, 10]]], ['Job6', 'loc0', 881, 'loc5', 1140, [[913, 26], [1001, 11]]]]
+Search Successful!
+   Strategy = 'astar with full cycle checking'
+   Solution cost = 25
+   Goal state: Action= "deliver(Job1)", S240513, g-value = 25, (From S240497)
+    Carrying: [] (load 0 grams)
+    State time = 977 loc = loc6 earned so far = 207
+    Unstarted Jobs.[]
+----------------------------
+Solution Path:
+Action= "START", S0, g-value = 0, (Initial State)
+    Carrying: [] (load 0 grams)
+    State time = 420 loc = home earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job3', 'Job4', 'Job5', 'Job6']
+ ==> Action= "first_pickup(Job2)", S3, g-value = 0, (From S0)
+    Carrying: ['Job2'] (load 2179 grams)
+    State time = 552 loc = loc2 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job5', 'Job6']
+ ==> Action= "deliver(Job2)", S15, g-value = 0, (From S3)
+    Carrying: [] (load 0 grams)
+    State time = 588 loc = loc4 earned so far = 43
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job5', 'Job6']
+ ==> Action= "pickup(Job5)", S199, g-value = 0, (From S15)
+    Carrying: ['Job5'] (load 1942 grams)
+    State time = 679 loc = loc8 earned so far = 43
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job6']
+ ==> Action= "deliver(Job5)", S5631, g-value = 0, (From S199)
+    Carrying: [] (load 0 grams)
+    State time = 709 loc = loc0 earned so far = 74
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job6']
+ ==> Action= "pickup(Job0)", S36136, g-value = 0, (From S5631)
+    Carrying: ['Job0'] (load 2401 grams)
+    State time = 754 loc = loc4 earned so far = 74
+    Unstarted Jobs.['Job1', 'Job3', 'Job4', 'Job6']
+ ==> Action= "deliver(Job0)", S36151, g-value = 20, (From S36136)
+    Carrying: [] (load 0 grams)
+    State time = 789 loc = loc6 earned so far = 90
+    Unstarted Jobs.['Job1', 'Job3', 'Job4', 'Job6']
+ ==> Action= "pickup(Job1)", S197175, g-value = 20, (From S36151)
+    Carrying: ['Job1'] (load 4444 grams)
+    State time = 829 loc = loc1 earned so far = 90
+    Unstarted Jobs.['Job3', 'Job4', 'Job6']
+ ==> Action= "pickup(Job6)", S239882, g-value = 20, (From S197175)
+    Carrying: ['Job1', 'Job6'] (load 5584 grams)
+    State time = 881 loc = loc0 earned so far = 90
+    Unstarted Jobs.['Job3', 'Job4']
+ ==> Action= "pickup(Job4)", S239905, g-value = 20, (From S239882)
+    Carrying: ['Job1', 'Job6', 'Job4'] (load 6615 grams)
+    State time = 881 loc = loc0 earned so far = 90
+    Unstarted Jobs.['Job3']
+ ==> Action= "deliver(Job6)", S240413, g-value = 20, (From S239905)
+    Carrying: ['Job1', 'Job4'] (load 5475 grams)
+    State time = 889 loc = loc5 earned so far = 116
+    Unstarted Jobs.['Job3']
+ ==> Action= "deliver(Job4)", S240435, g-value = 20, (From S240413)
+    Carrying: ['Job1'] (load 4444 grams)
+    State time = 926 loc = loc4 earned so far = 151
+    Unstarted Jobs.['Job3']
+ ==> Action= "pickup(Job3)", S240463, g-value = 20, (From S240435)
+    Carrying: ['Job1', 'Job3'] (load 8583 grams)
+    State time = 961 loc = loc9 earned so far = 151
+    Unstarted Jobs.[]
+ ==> Action= "deliver(Job3)", S240497, g-value = 20, (From S240463)
+    Carrying: ['Job1'] (load 4444 grams)
+    State time = 976 loc = loc2 earned so far = 180
+    Unstarted Jobs.[]
+ ==> Action= "deliver(Job1)", S240513, g-value = 25, (From S240497)
+    Carrying: [] (load 0 grams)
+    State time = 977 loc = loc6 earned so far = 207
+    Unstarted Jobs.[]
+
+----------------------------
+Search time = 37.2, nodes expanded = 303323, states generated = 303323, states cycle check pruned = 0
+=======================================================
+    Test 2
+=======================================================
+   map = [['loc0', 'loc1', 'loc2', 'loc3', 'loc4'], [['loc0', 'loc1', 36], ['loc0', 'loc2', 23], ['loc0', 'loc3', 8], ['loc0', 'loc4', 12], ['loc1', 'loc2', 37], ['loc1', 'loc3', 28], ['loc1', 'loc4', 33], ['loc2', 'loc3', 23], ['loc2', 'loc4', 11], ['loc3', 'loc4', 12]]]
+   jobs = [['Job0', 'loc4', 956, 'loc0', 4475, [[992, 41], [1087, 26]]], ['Job1', 'loc3', 472, 'loc1', 1993, [[540, 40]]], ['Job2', 'loc4', 735, 'loc3', 3356, [[777, 32], [818, 21]]], ['Job3', 'loc0', 447, 'loc2', 3100, [[584, 44]]], ['Job4', 'loc4', 968, 'loc0', 4609, [[1090, 29], [1119, 5]]], ['Job5', 'loc4', 986, 'loc3', 2825, [[1073, 43]]], ['Job6', 'loc3', 939, 'loc1', 4142, [[1045, 43], [1051, 18], [1108, 11]]]]
+Search Successful!
+   Strategy = 'astar with full cycle checking'
+   Solution cost = 0
+   Goal state: Action= "deliver(Job5)", S43954, g-value = 0, (From S43935)
+    Carrying: [] (load 0 grams)
+    State time = 1073 loc = loc3 earned so far = 272
+    Unstarted Jobs.[]
+----------------------------
+Solution Path:
+Action= "START", S0, g-value = 0, (Initial State)
+    Carrying: [] (load 0 grams)
+    State time = 420 loc = home earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job3', 'Job4', 'Job5', 'Job6']
+ ==> Action= "first_pickup(Job1)", S2, g-value = 0, (From S0)
+    Carrying: ['Job1'] (load 1993 grams)
+    State time = 472 loc = loc3 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job2', 'Job3', 'Job4', 'Job5', 'Job6']
+ ==> Action= "pickup(Job3)", S909, g-value = 0, (From S2)
+    Carrying: ['Job1', 'Job3'] (load 5093 grams)
+    State time = 480 loc = loc0 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job2', 'Job4', 'Job5', 'Job6']
+ ==> Action= "deliver(Job1)", S3603, g-value = 0, (From S909)
+    Carrying: ['Job3'] (load 3100 grams)
+    State time = 516 loc = loc1 earned so far = 40
+    Unstarted Jobs.['Job0', 'Job2', 'Job4', 'Job5', 'Job6']
+ ==> Action= "deliver(Job3)", S6499, g-value = 0, (From S3603)
+    Carrying: [] (load 0 grams)
+    State time = 553 loc = loc2 earned so far = 84
+    Unstarted Jobs.['Job0', 'Job2', 'Job4', 'Job5', 'Job6']
+ ==> Action= "pickup(Job2)", S43062, g-value = 0, (From S6499)
+    Carrying: ['Job2'] (load 3356 grams)
+    State time = 735 loc = loc4 earned so far = 84
+    Unstarted Jobs.['Job0', 'Job4', 'Job5', 'Job6']
+ ==> Action= "deliver(Job2)", S43085, g-value = 0, (From S43062)
+    Carrying: [] (load 0 grams)
+    State time = 747 loc = loc3 earned so far = 116
+    Unstarted Jobs.['Job0', 'Job4', 'Job5', 'Job6']
+ ==> Action= "pickup(Job6)", S43124, g-value = 0, (From S43085)
+    Carrying: ['Job6'] (load 4142 grams)
+    State time = 939 loc = loc3 earned so far = 116
+    Unstarted Jobs.['Job0', 'Job4', 'Job5']
+ ==> Action= "pickup(Job0)", S43653, g-value = 0, (From S43124)
+    Carrying: ['Job6', 'Job0'] (load 8617 grams)
+    State time = 956 loc = loc4 earned so far = 116
+    Unstarted Jobs.['Job4', 'Job5']
+ ==> Action= "deliver(Job0)", S43669, g-value = 0, (From S43653)
+    Carrying: ['Job6'] (load 4142 grams)
+    State time = 968 loc = loc0 earned so far = 157
+    Unstarted Jobs.['Job4', 'Job5']
+ ==> Action= "deliver(Job6)", S43688, g-value = 0, (From S43669)
+    Carrying: [] (load 0 grams)
+    State time = 1004 loc = loc1 earned so far = 200
+    Unstarted Jobs.['Job4', 'Job5']
+ ==> Action= "pickup(Job4)", S43904, g-value = 0, (From S43688)
+    Carrying: ['Job4'] (load 4609 grams)
+    State time = 1037 loc = loc4 earned so far = 200
+    Unstarted Jobs.['Job5']
+ ==> Action= "deliver(Job4)", S43919, g-value = 0, (From S43904)
+    Carrying: [] (load 0 grams)
+    State time = 1049 loc = loc0 earned so far = 229
+    Unstarted Jobs.['Job5']
+ ==> Action= "pickup(Job5)", S43935, g-value = 0, (From S43919)
+    Carrying: ['Job5'] (load 2825 grams)
+    State time = 1061 loc = loc4 earned so far = 229
+    Unstarted Jobs.[]
+ ==> Action= "deliver(Job5)", S43954, g-value = 0, (From S43935)
+    Carrying: [] (load 0 grams)
+    State time = 1073 loc = loc3 earned so far = 272
+    Unstarted Jobs.[]
+
+----------------------------
+Search time = 4.019999999999996, nodes expanded = 43967, states generated = 43967, states cycle check pruned = 0
+=======================================================
+    Test 3
+=======================================================
+   map = [['loc0', 'loc1', 'loc2', 'loc3', 'loc4'], [['loc0', 'loc1', 2], ['loc0', 'loc2', 26], ['loc0', 'loc3', 22], ['loc0', 'loc4', 15], ['loc1', 'loc2', 26], ['loc1', 'loc3', 21], ['loc1', 'loc4', 15], ['loc2', 'loc3', 16], ['loc2', 'loc4', 40], ['loc3', 'loc4', 36]]]
+   jobs = [['Job0', 'loc2', 632, 'loc1', 4807, [[748, 30]]], ['Job1', 'loc3', 484, 'loc4', 1545, [[556, 43], [658, 21], [700, 5]]], ['Job2', 'loc2', 741, 'loc4', 4634, [[804, 44], [897, 33], [998, 24], [1099, 3]]], ['Job3', 'loc1', 575, 'loc2', 121, [[680, 45], [796, 27], [905, 20]]], ['Job4', 'loc1', 874, 'loc0', 2586, [[982, 39], [1041, 15], [1113, 7]]], ['Job5', 'loc4', 516, 'loc1', 613, [[602, 37], [629, 13]]]]
+Search Successful!
+   Strategy = 'astar with full cycle checking'
+   Solution cost = 0
+   Goal state: Action= "deliver(Job4)", S3769, g-value = 0, (From S3753)
+    Carrying: [] (load 0 grams)
+    State time = 876 loc = loc0 earned so far = 238
+    Unstarted Jobs.[]
+----------------------------
+Solution Path:
+Action= "START", S0, g-value = 0, (Initial State)
+    Carrying: [] (load 0 grams)
+    State time = 420 loc = home earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job3', 'Job4', 'Job5']
+ ==> Action= "first_pickup(Job1)", S2, g-value = 0, (From S0)
+    Carrying: ['Job1'] (load 1545 grams)
+    State time = 484 loc = loc3 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job2', 'Job3', 'Job4', 'Job5']
+ ==> Action= "deliver(Job1)", S461, g-value = 0, (From S2)
+    Carrying: [] (load 0 grams)
+    State time = 520 loc = loc4 earned so far = 43
+    Unstarted Jobs.['Job0', 'Job2', 'Job3', 'Job4', 'Job5']
+ ==> Action= "pickup(Job5)", S1593, g-value = 0, (From S461)
+    Carrying: ['Job5'] (load 613 grams)
+    State time = 520 loc = loc4 earned so far = 43
+    Unstarted Jobs.['Job0', 'Job2', 'Job3', 'Job4']
+ ==> Action= "deliver(Job5)", S3458, g-value = 0, (From S1593)
+    Carrying: [] (load 0 grams)
+    State time = 535 loc = loc1 earned so far = 80
+    Unstarted Jobs.['Job0', 'Job2', 'Job3', 'Job4']
+ ==> Action= "pickup(Job3)", S3473, g-value = 0, (From S3458)
+    Carrying: ['Job3'] (load 121 grams)
+    State time = 575 loc = loc1 earned so far = 80
+    Unstarted Jobs.['Job0', 'Job2', 'Job4']
+ ==> Action= "deliver(Job3)", S3677, g-value = 0, (From S3473)
+    Carrying: [] (load 0 grams)
+    State time = 601 loc = loc2 earned so far = 125
+    Unstarted Jobs.['Job0', 'Job2', 'Job4']
+ ==> Action= "pickup(Job0)", S3689, g-value = 0, (From S3677)
+    Carrying: ['Job0'] (load 4807 grams)
+    State time = 632 loc = loc2 earned so far = 125
+    Unstarted Jobs.['Job2', 'Job4']
+ ==> Action= "deliver(Job0)", S3710, g-value = 0, (From S3689)
+    Carrying: [] (load 0 grams)
+    State time = 658 loc = loc1 earned so far = 155
+    Unstarted Jobs.['Job2', 'Job4']
+ ==> Action= "pickup(Job2)", S3721, g-value = 0, (From S3710)
+    Carrying: ['Job2'] (load 4634 grams)
+    State time = 741 loc = loc2 earned so far = 155
+    Unstarted Jobs.['Job4']
+ ==> Action= "deliver(Job2)", S3737, g-value = 0, (From S3721)
+    Carrying: [] (load 0 grams)
+    State time = 781 loc = loc4 earned so far = 199
+    Unstarted Jobs.['Job4']
+ ==> Action= "pickup(Job4)", S3753, g-value = 0, (From S3737)
+    Carrying: ['Job4'] (load 2586 grams)
+    State time = 874 loc = loc1 earned so far = 199
+    Unstarted Jobs.[]
+ ==> Action= "deliver(Job4)", S3769, g-value = 0, (From S3753)
+    Carrying: [] (load 0 grams)
+    State time = 876 loc = loc0 earned so far = 238
+    Unstarted Jobs.[]
+
+----------------------------
+Search time = 0.4000000000000057, nodes expanded = 3776, states generated = 3776, states cycle check pruned = 0
+=======================================================
+    Test 4
+=======================================================
+   map = [['loc0', 'loc1', 'loc2', 'loc3', 'loc4', 'loc5', 'loc6'], [['loc0', 'loc1', 25], ['loc0', 'loc2', 37], ['loc0', 'loc3', 24], ['loc0', 'loc4', 37], ['loc0', 'loc5', 10], ['loc0', 'loc6', 6], ['loc1', 'loc2', 50], ['loc1', 'loc3', 33], ['loc1', 'loc4', 53], ['loc1', 'loc5', 25], ['loc1', 'loc6', 31], ['loc2', 'loc3', 16], ['loc2', 'loc4', 5], ['loc2', 'loc5', 28], ['loc2', 'loc6', 36], ['loc3', 'loc4', 20], ['loc3', 'loc5', 14], ['loc3', 'loc6', 25], ['loc4', 'loc5', 30], ['loc4', 'loc6', 35], ['loc5', 'loc6', 13]]]
+   jobs = [['Job0', 'loc3', 665, 'loc1', 4973, [[803, 45]]], ['Job1', 'loc4', 606, 'loc2', 1901, [[648, 39]]], ['Job2', 'loc1', 611, 'loc3', 1988, [[739, 45], [795, 35], [879, 22], [920, 3]]], ['Job3', 'loc3', 828, 'loc6', 3425, [[861, 25], [918, 13]]]]
+Search Successful!
+   Strategy = 'astar with full cycle checking'
+   Solution cost = 0
+   Goal state: Action= "deliver(Job3)", S234, g-value = 0, (From S227)
+    Carrying: [] (load 0 grams)
+    State time = 853 loc = loc6 earned so far = 154
+    Unstarted Jobs.[]
+----------------------------
+Solution Path:
+Action= "START", S0, g-value = 0, (Initial State)
+    Carrying: [] (load 0 grams)
+    State time = 420 loc = home earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job3']
+ ==> Action= "first_pickup(Job1)", S2, g-value = 0, (From S0)
+    Carrying: ['Job1'] (load 1901 grams)
+    State time = 606 loc = loc4 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job2', 'Job3']
+ ==> Action= "deliver(Job1)", S58, g-value = 0, (From S2)
+    Carrying: [] (load 0 grams)
+    State time = 611 loc = loc2 earned so far = 39
+    Unstarted Jobs.['Job0', 'Job2', 'Job3']
+ ==> Action= "pickup(Job2)", S198, g-value = 0, (From S58)
+    Carrying: ['Job2'] (load 1988 grams)
+    State time = 661 loc = loc1 earned so far = 39
+    Unstarted Jobs.['Job0', 'Job3']
+ ==> Action= "deliver(Job2)", S204, g-value = 0, (From S198)
+    Carrying: [] (load 0 grams)
+    State time = 694 loc = loc3 earned so far = 84
+    Unstarted Jobs.['Job0', 'Job3']
+ ==> Action= "pickup(Job0)", S214, g-value = 0, (From S204)
+    Carrying: ['Job0'] (load 4973 grams)
+    State time = 694 loc = loc3 earned so far = 84
+    Unstarted Jobs.['Job3']
+ ==> Action= "deliver(Job0)", S221, g-value = 0, (From S214)
+    Carrying: [] (load 0 grams)
+    State time = 727 loc = loc1 earned so far = 129
+    Unstarted Jobs.['Job3']
+ ==> Action= "pickup(Job3)", S227, g-value = 0, (From S221)
+    Carrying: ['Job3'] (load 3425 grams)
+    State time = 828 loc = loc3 earned so far = 129
+    Unstarted Jobs.[]
+ ==> Action= "deliver(Job3)", S234, g-value = 0, (From S227)
+    Carrying: [] (load 0 grams)
+    State time = 853 loc = loc6 earned so far = 154
+    Unstarted Jobs.[]
+
+----------------------------
+Search time = 0.01999999999999602, nodes expanded = 239, states generated = 239, states cycle check pruned = 0
+=======================================================
+    Test 5
+=======================================================
+   map = [['loc0', 'loc1', 'loc2', 'loc3', 'loc4', 'loc5', 'loc6', 'loc7', 'loc8', 'loc9'], [['loc0', 'loc1', 11], ['loc0', 'loc2', 37], ['loc0', 'loc3', 40], ['loc0', 'loc4', 37], ['loc0', 'loc5', 41], ['loc0', 'loc6', 35], ['loc0', 'loc7', 22], ['loc0', 'loc8', 46], ['loc0', 'loc9', 20], ['loc1', 'loc2', 32], ['loc1', 'loc3', 37], ['loc1', 'loc4', 32], ['loc1', 'loc5', 40], ['loc1', 'loc6', 29], ['loc1', 'loc7', 17], ['loc1', 'loc8', 48], ['loc1', 'loc9', 23], ['loc2', 'loc3', 7], ['loc2', 'loc4', 1], ['loc2', 'loc5', 14], ['loc2', 'loc6', 4], ['loc2', 'loc7', 15], ['loc2', 'loc8', 26], ['loc2', 'loc9', 24], ['loc3', 'loc4', 8], ['loc3', 'loc5', 7], ['loc3', 'loc6', 11], ['loc3', 'loc7', 20], ['loc3', 'loc8', 19], ['loc3', 'loc9', 24], ['loc4', 'loc5', 15], ['loc4', 'loc6', 3], ['loc4', 'loc7', 15], ['loc4', 'loc8', 27], ['loc4', 'loc9', 25], ['loc5', 'loc6', 17], ['loc5', 'loc7', 23], ['loc5', 'loc8', 12], ['loc5', 'loc9', 22], ['loc6', 'loc7', 13], ['loc6', 'loc8', 29], ['loc6', 'loc9', 24], ['loc7', 'loc8', 32], ['loc7', 'loc9', 15], ['loc8', 'loc9', 26]]]
+   jobs = [['Job0', 'loc1', 748, 'loc3', 3798, [[829, 38], [907, 15], [953, 8]]], ['Job1', 'loc4', 593, 'loc7', 4011, [[644, 44]]], ['Job2', 'loc9', 483, 'loc5', 104, [[534, 29], [641, 14]]], ['Job3', 'loc9', 848, 'loc0', 1278, [[980, 38], [1074, 21]]], ['Job4', 'loc5', 479, 'loc6', 4730, [[504, 28]]]]
+Search Successful!
+   Strategy = 'astar with full cycle checking'
+   Solution cost = 15
+   Goal state: Action= "deliver(Job3)", S4041, g-value = 15, (From S4027)
+    Carrying: [] (load 0 grams)
+    State time = 868 loc = loc0 earned so far = 162
+    Unstarted Jobs.[]
+----------------------------
+Solution Path:
+Action= "START", S0, g-value = 0, (Initial State)
+    Carrying: [] (load 0 grams)
+    State time = 420 loc = home earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job3', 'Job4']
+ ==> Action= "first_pickup(Job4)", S5, g-value = 0, (From S0)
+    Carrying: ['Job4'] (load 4730 grams)
+    State time = 479 loc = loc5 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job3']
+ ==> Action= "deliver(Job4)", S15, g-value = 0, (From S5)
+    Carrying: [] (load 0 grams)
+    State time = 496 loc = loc6 earned so far = 28
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job3']
+ ==> Action= "pickup(Job2)", S146, g-value = 0, (From S15)
+    Carrying: ['Job2'] (load 104 grams)
+    State time = 520 loc = loc9 earned so far = 28
+    Unstarted Jobs.['Job0', 'Job1', 'Job3']
+ ==> Action= "deliver(Job2)", S232, g-value = 15, (From S146)
+    Carrying: [] (load 0 grams)
+    State time = 542 loc = loc5 earned so far = 42
+    Unstarted Jobs.['Job0', 'Job1', 'Job3']
+ ==> Action= "pickup(Job1)", S3905, g-value = 15, (From S232)
+    Carrying: ['Job1'] (load 4011 grams)
+    State time = 593 loc = loc4 earned so far = 42
+    Unstarted Jobs.['Job0', 'Job3']
+ ==> Action= "deliver(Job1)", S3931, g-value = 15, (From S3905)
+    Carrying: [] (load 0 grams)
+    State time = 608 loc = loc7 earned so far = 86
+    Unstarted Jobs.['Job0', 'Job3']
+ ==> Action= "pickup(Job0)", S3956, g-value = 15, (From S3931)
+    Carrying: ['Job0'] (load 3798 grams)
+    State time = 748 loc = loc1 earned so far = 86
+    Unstarted Jobs.['Job3']
+ ==> Action= "deliver(Job0)", S4018, g-value = 15, (From S3956)
+    Carrying: [] (load 0 grams)
+    State time = 785 loc = loc3 earned so far = 124
+    Unstarted Jobs.['Job3']
+ ==> Action= "pickup(Job3)", S4027, g-value = 15, (From S4018)
+    Carrying: ['Job3'] (load 1278 grams)
+    State time = 848 loc = loc9 earned so far = 124
+    Unstarted Jobs.[]
+ ==> Action= "deliver(Job3)", S4041, g-value = 15, (From S4027)
+    Carrying: [] (load 0 grams)
+    State time = 868 loc = loc0 earned so far = 162
+    Unstarted Jobs.[]
+
+----------------------------
+Search time = 0.3500000000000014, nodes expanded = 4082, states generated = 4082, states cycle check pruned = 0
+=======================================================
+    Test 6
+=======================================================
+   map = [['loc0', 'loc1', 'loc2', 'loc3', 'loc4', 'loc5', 'loc6', 'loc7', 'loc8'], [['loc0', 'loc1', 27], ['loc0', 'loc2', 4], ['loc0', 'loc3', 14], ['loc0', 'loc4', 30], ['loc0', 'loc5', 28], ['loc0', 'loc6', 40], ['loc0', 'loc7', 23], ['loc0', 'loc8', 36], ['loc1', 'loc2', 29], ['loc1', 'loc3', 22], ['loc1', 'loc4', 43], ['loc1', 'loc5', 49], ['loc1', 'loc6', 39], ['loc1', 'loc7', 11], ['loc1', 'loc8', 39], ['loc2', 'loc3', 14], ['loc2', 'loc4', 33], ['loc2', 'loc5', 30], ['loc2', 'loc6', 43], ['loc2', 'loc7', 27], ['loc2', 'loc8', 39], ['loc3', 'loc4', 43], ['loc3', 'loc5', 42], ['loc3', 'loc6', 49], ['loc3', 'loc7', 25], ['loc3', 'loc8', 46], ['loc4', 'loc5', 13], ['loc4', 'loc6', 20], ['loc4', 'loc7', 32], ['loc4', 'loc8', 14], ['loc5', 'loc6', 33], ['loc5', 'loc7', 39], ['loc5', 'loc8', 27], ['loc6', 'loc7', 28], ['loc6', 'loc8', 6], ['loc7', 'loc8', 27]]]
+   jobs = [['Job0', 'loc4', 839, 'loc2', 4778, [[941, 40], [954, 30], [1049, 23], [1054, 18]]], ['Job1', 'loc1', 517, 'loc4', 197, [[636, 44], [709, 34], [720, 16]]], ['Job2', 'loc2', 967, 'loc5', 2007, [[1097, 40]]], ['Job3', 'loc0', 948, 'loc6', 3087, [[1025, 40], [1092, 16], [1136, 3]]]]
+Search Successful!
+   Strategy = 'astar with full cycle checking'
+   Solution cost = 0
+   Goal state: Action= "deliver(Job2)", S237, g-value = 0, (From S127)
+    Carrying: [] (load 0 grams)
+    State time = 1043 loc = loc5 earned so far = 164
+    Unstarted Jobs.[]
+----------------------------
+Solution Path:
+Action= "START", S0, g-value = 0, (Initial State)
+    Carrying: [] (load 0 grams)
+    State time = 420 loc = home earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job3']
+ ==> Action= "first_pickup(Job1)", S2, g-value = 0, (From S0)
+    Carrying: ['Job1'] (load 197 grams)
+    State time = 517 loc = loc1 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job2', 'Job3']
+ ==> Action= "deliver(Job1)", S78, g-value = 0, (From S2)
+    Carrying: [] (load 0 grams)
+    State time = 560 loc = loc4 earned so far = 44
+    Unstarted Jobs.['Job0', 'Job2', 'Job3']
+ ==> Action= "pickup(Job0)", S84, g-value = 0, (From S78)
+    Carrying: ['Job0'] (load 4778 grams)
+    State time = 839 loc = loc4 earned so far = 44
+    Unstarted Jobs.['Job2', 'Job3']
+ ==> Action= "deliver(Job0)", S93, g-value = 0, (From S84)
+    Carrying: [] (load 0 grams)
+    State time = 872 loc = loc2 earned so far = 84
+    Unstarted Jobs.['Job2', 'Job3']
+ ==> Action= "pickup(Job3)", S104, g-value = 0, (From S93)
+    Carrying: ['Job3'] (load 3087 grams)
+    State time = 948 loc = loc0 earned so far = 84
+    Unstarted Jobs.['Job2']
+ ==> Action= "pickup(Job2)", S115, g-value = 0, (From S104)
+    Carrying: ['Job3', 'Job2'] (load 5094 grams)
+    State time = 967 loc = loc2 earned so far = 84
+    Unstarted Jobs.[]
+ ==> Action= "deliver(Job3)", S127, g-value = 0, (From S115)
+    Carrying: ['Job2'] (load 2007 grams)
+    State time = 1010 loc = loc6 earned so far = 124
+    Unstarted Jobs.[]
+ ==> Action= "deliver(Job2)", S237, g-value = 0, (From S127)
+    Carrying: [] (load 0 grams)
+    State time = 1043 loc = loc5 earned so far = 164
+    Unstarted Jobs.[]
+
+----------------------------
+Search time = 0.030000000000001137, nodes expanded = 244, states generated = 244, states cycle check pruned = 0
+=======================================================
+    Test 7
+=======================================================
+   map = [['loc0', 'loc1', 'loc2', 'loc3', 'loc4', 'loc5', 'loc6'], [['loc0', 'loc1', 26], ['loc0', 'loc2', 11], ['loc0', 'loc3', 12], ['loc0', 'loc4', 23], ['loc0', 'loc5', 23], ['loc0', 'loc6', 17], ['loc1', 'loc2', 34], ['loc1', 'loc3', 31], ['loc1', 'loc4', 38], ['loc1', 'loc5', 29], ['loc1', 'loc6', 40], ['loc2', 'loc3', 21], ['loc2', 'loc4', 14], ['loc2', 'loc5', 19], ['loc2', 'loc6', 22], ['loc3', 'loc4', 34], ['loc3', 'loc5', 35], ['loc3', 'loc6', 9], ['loc4', 'loc5', 11], ['loc4', 'loc6', 36], ['loc5', 'loc6', 40]]]
+   jobs = [['Job0', 'loc2', 501, 'loc4', 549, [[568, 28], [650, 8]]], ['Job1', 'loc6', 588, 'loc1', 1234, [[694, 32], [739, 7]]], ['Job2', 'loc6', 985, 'loc5', 3785, [[1108, 37], [1118, 22]]]]
+Search Successful!
+   Strategy = 'astar with full cycle checking'
+   Solution cost = 0
+   Goal state: Action= "deliver(Job2)", S46, g-value = 0, (From S41)
+    Carrying: [] (load 0 grams)
+    State time = 1025 loc = loc5 earned so far = 97
+    Unstarted Jobs.[]
+----------------------------
+Solution Path:
+Action= "START", S0, g-value = 0, (Initial State)
+    Carrying: [] (load 0 grams)
+    State time = 420 loc = home earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job2']
+ ==> Action= "first_pickup(Job0)", S1, g-value = 0, (From S0)
+    Carrying: ['Job0'] (load 549 grams)
+    State time = 501 loc = loc2 earned so far = 0
+    Unstarted Jobs.['Job1', 'Job2']
+ ==> Action= "deliver(Job0)", S4, g-value = 0, (From S1)
+    Carrying: [] (load 0 grams)
+    State time = 515 loc = loc4 earned so far = 28
+    Unstarted Jobs.['Job1', 'Job2']
+ ==> Action= "pickup(Job1)", S10, g-value = 0, (From S4)
+    Carrying: ['Job1'] (load 1234 grams)
+    State time = 588 loc = loc6 earned so far = 28
+    Unstarted Jobs.['Job2']
+ ==> Action= "deliver(Job1)", S18, g-value = 0, (From S10)
+    Carrying: [] (load 0 grams)
+    State time = 628 loc = loc1 earned so far = 60
+    Unstarted Jobs.['Job2']
+ ==> Action= "pickup(Job2)", S41, g-value = 0, (From S18)
+    Carrying: ['Job2'] (load 3785 grams)
+    State time = 985 loc = loc6 earned so far = 60
+    Unstarted Jobs.[]
+ ==> Action= "deliver(Job2)", S46, g-value = 0, (From S41)
+    Carrying: [] (load 0 grams)
+    State time = 1025 loc = loc5 earned so far = 97
+    Unstarted Jobs.[]
+
+----------------------------
+Search time = 0.0, nodes expanded = 49, states generated = 49, states cycle check pruned = 0
+=======================================================
+    Test 8
+=======================================================
+   map = [['loc0', 'loc1', 'loc2', 'loc3', 'loc4', 'loc5', 'loc6', 'loc7'], [['loc0', 'loc1', 28], ['loc0', 'loc2', 15], ['loc0', 'loc3', 13], ['loc0', 'loc4', 24], ['loc0', 'loc5', 16], ['loc0', 'loc6', 17], ['loc0', 'loc7', 23], ['loc1', 'loc2', 25], ['loc1', 'loc3', 36], ['loc1', 'loc4', 43], ['loc1', 'loc5', 24], ['loc1', 'loc6', 38], ['loc1', 'loc7', 6], ['loc2', 'loc3', 28], ['loc2', 'loc4', 39], ['loc2', 'loc5', 1], ['loc2', 'loc6', 14], ['loc2', 'loc7', 19], ['loc3', 'loc4', 12], ['loc3', 'loc5', 29], ['loc3', 'loc6', 27], ['loc3', 'loc7', 31], ['loc4', 'loc5', 40], ['loc4', 'loc6', 39], ['loc4', 'loc7', 39], ['loc5', 'loc6', 15], ['loc5', 'loc7', 19], ['loc6', 'loc7', 33]]]
+   jobs = [['Job0', 'loc3', 701, 'loc4', 933, [[817, 33]]], ['Job1', 'loc0', 793, 'loc3', 2326, [[835, 36], [924, 30], [961, 25]]], ['Job2', 'loc6', 928, 'loc7', 3697, [[1030, 34], [1123, 18]]], ['Job3', 'loc1', 498, 'loc0', 1519, [[549, 39], [561, 27], [635, 8]]], ['Job4', 'loc4', 614, 'loc6', 2391, [[751, 25]]]]
+Search Successful!
+   Strategy = 'astar with full cycle checking'
+   Solution cost = 0
+   Goal state: Action= "deliver(Job2)", S1962, g-value = 0, (From S1951)
+    Carrying: [] (load 0 grams)
+    State time = 961 loc = loc7 earned so far = 167
+    Unstarted Jobs.[]
+----------------------------
+Solution Path:
+Action= "START", S0, g-value = 0, (Initial State)
+    Carrying: [] (load 0 grams)
+    State time = 420 loc = home earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job3', 'Job4']
+ ==> Action= "first_pickup(Job3)", S4, g-value = 0, (From S0)
+    Carrying: ['Job3'] (load 1519 grams)
+    State time = 498 loc = loc1 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job4']
+ ==> Action= "deliver(Job3)", S818, g-value = 0, (From S4)
+    Carrying: [] (load 0 grams)
+    State time = 526 loc = loc0 earned so far = 39
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job4']
+ ==> Action= "pickup(Job4)", S1606, g-value = 0, (From S818)
+    Carrying: ['Job4'] (load 2391 grams)
+    State time = 614 loc = loc4 earned so far = 39
+    Unstarted Jobs.['Job0', 'Job1', 'Job2']
+ ==> Action= "deliver(Job4)", S1857, g-value = 0, (From S1606)
+    Carrying: [] (load 0 grams)
+    State time = 653 loc = loc6 earned so far = 64
+    Unstarted Jobs.['Job0', 'Job1', 'Job2']
+ ==> Action= "pickup(Job0)", S1869, g-value = 0, (From S1857)
+    Carrying: ['Job0'] (load 933 grams)
+    State time = 701 loc = loc3 earned so far = 64
+    Unstarted Jobs.['Job1', 'Job2']
+ ==> Action= "pickup(Job1)", S1881, g-value = 0, (From S1869)
+    Carrying: ['Job0', 'Job1'] (load 3259 grams)
+    State time = 793 loc = loc0 earned so far = 64
+    Unstarted Jobs.['Job2']
+ ==> Action= "deliver(Job0)", S1901, g-value = 0, (From S1881)
+    Carrying: ['Job1'] (load 2326 grams)
+    State time = 817 loc = loc4 earned so far = 97
+    Unstarted Jobs.['Job2']
+ ==> Action= "deliver(Job1)", S1920, g-value = 0, (From S1901)
+    Carrying: [] (load 0 grams)
+    State time = 829 loc = loc3 earned so far = 133
+    Unstarted Jobs.['Job2']
+ ==> Action= "pickup(Job2)", S1951, g-value = 0, (From S1920)
+    Carrying: ['Job2'] (load 3697 grams)
+    State time = 928 loc = loc6 earned so far = 133
+    Unstarted Jobs.[]
+ ==> Action= "deliver(Job2)", S1962, g-value = 0, (From S1951)
+    Carrying: [] (load 0 grams)
+    State time = 961 loc = loc7 earned so far = 167
+    Unstarted Jobs.[]
+
+----------------------------
+Search time = 0.17999999999999972, nodes expanded = 1976, states generated = 1976, states cycle check pruned = 0
+=======================================================
+    Test 9
+=======================================================
+   map = [['loc0', 'loc1', 'loc2', 'loc3', 'loc4', 'loc5'], [['loc0', 'loc1', 1], ['loc0', 'loc2', 36], ['loc0', 'loc3', 12], ['loc0', 'loc4', 39], ['loc0', 'loc5', 49], ['loc1', 'loc2', 35], ['loc1', 'loc3', 11], ['loc1', 'loc4', 38], ['loc1', 'loc5', 48], ['loc2', 'loc3', 29], ['loc2', 'loc4', 31], ['loc2', 'loc5', 19], ['loc3', 'loc4', 27], ['loc3', 'loc5', 38], ['loc4', 'loc5', 24]]]
+   jobs = [['Job0', 'loc2', 565, 'loc4', 4788, [[692, 28], [806, 20], [866, 14]]], ['Job1', 'loc3', 801, 'loc5', 1550, [[932, 35]]], ['Job2', 'loc3', 594, 'loc5', 1937, [[649, 26], [684, 6]]], ['Job3', 'loc0', 922, 'loc1', 3621, [[969, 25]]], ['Job4', 'loc1', 546, 'loc5', 4862, [[667, 28]]], ['Job5', 'loc3', 572, 'loc1', 344, [[601, 40]]]]
+Search Successful!
+   Strategy = 'astar with full cycle checking'
+   Solution cost = 0
+   Goal state: Action= "deliver(Job3)", S14525, g-value = 0, (From S14510)
+    Carrying: [] (load 0 grams)
+    State time = 923 loc = loc1 earned so far = 182
+    Unstarted Jobs.[]
+----------------------------
+Solution Path:
+Action= "START", S0, g-value = 0, (Initial State)
+    Carrying: [] (load 0 grams)
+    State time = 420 loc = home earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job3', 'Job4', 'Job5']
+ ==> Action= "first_pickup(Job4)", S5, g-value = 0, (From S0)
+    Carrying: ['Job4'] (load 4862 grams)
+    State time = 546 loc = loc1 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job3', 'Job5']
+ ==> Action= "pickup(Job5)", S750, g-value = 0, (From S5)
+    Carrying: ['Job4', 'Job5'] (load 5206 grams)
+    State time = 572 loc = loc3 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job3']
+ ==> Action= "deliver(Job5)", S6163, g-value = 0, (From S750)
+    Carrying: ['Job4'] (load 4862 grams)
+    State time = 583 loc = loc1 earned so far = 40
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job3']
+ ==> Action= "pickup(Job2)", S12053, g-value = 0, (From S6163)
+    Carrying: ['Job4', 'Job2'] (load 6799 grams)
+    State time = 594 loc = loc3 earned so far = 40
+    Unstarted Jobs.['Job0', 'Job1', 'Job3']
+ ==> Action= "deliver(Job4)", S14367, g-value = 0, (From S12053)
+    Carrying: ['Job2'] (load 1937 grams)
+    State time = 632 loc = loc5 earned so far = 68
+    Unstarted Jobs.['Job0', 'Job1', 'Job3']
+ ==> Action= "deliver(Job2)", S14382, g-value = 0, (From S14367)
+    Carrying: [] (load 0 grams)
+    State time = 632 loc = loc5 earned so far = 94
+    Unstarted Jobs.['Job0', 'Job1', 'Job3']
+ ==> Action= "pickup(Job0)", S14396, g-value = 0, (From S14382)
+    Carrying: ['Job0'] (load 4788 grams)
+    State time = 651 loc = loc2 earned so far = 94
+    Unstarted Jobs.['Job1', 'Job3']
+ ==> Action= "deliver(Job0)", S14417, g-value = 0, (From S14396)
+    Carrying: [] (load 0 grams)
+    State time = 682 loc = loc4 earned so far = 122
+    Unstarted Jobs.['Job1', 'Job3']
+ ==> Action= "pickup(Job1)", S14447, g-value = 0, (From S14417)
+    Carrying: ['Job1'] (load 1550 grams)
+    State time = 801 loc = loc3 earned so far = 122
+    Unstarted Jobs.['Job3']
+ ==> Action= "deliver(Job1)", S14478, g-value = 0, (From S14447)
+    Carrying: [] (load 0 grams)
+    State time = 839 loc = loc5 earned so far = 157
+    Unstarted Jobs.['Job3']
+ ==> Action= "pickup(Job3)", S14510, g-value = 0, (From S14478)
+    Carrying: ['Job3'] (load 3621 grams)
+    State time = 922 loc = loc0 earned so far = 157
+    Unstarted Jobs.[]
+ ==> Action= "deliver(Job3)", S14525, g-value = 0, (From S14510)
+    Carrying: [] (load 0 grams)
+    State time = 923 loc = loc1 earned so far = 182
+    Unstarted Jobs.[]
+
+----------------------------
+Search time = 4.890000000000001, nodes expanded = 14535, states generated = 14535, states cycle check pruned = 0
+=======================================================
+    Test 10
+=======================================================
+   map = [['loc0', 'loc1', 'loc2', 'loc3', 'loc4', 'loc5'], [['loc0', 'loc1', 14], ['loc0', 'loc2', 17], ['loc0', 'loc3', 24], ['loc0', 'loc4', 13], ['loc0', 'loc5', 37], ['loc1', 'loc2', 6], ['loc1', 'loc3', 14], ['loc1', 'loc4', 15], ['loc1', 'loc5', 30], ['loc2', 'loc3', 20], ['loc2', 'loc4', 12], ['loc2', 'loc5', 24], ['loc3', 'loc4', 29], ['loc3', 'loc5', 42], ['loc4', 'loc5', 25]]]
+   jobs = [['Job0', 'loc1', 605, 'loc3', 420, [[641, 45], [740, 34], [821, 11]]], ['Job1', 'loc0', 952, 'loc2', 4767, [[1072, 39]]], ['Job2', 'loc1', 665, 'loc3', 4552, [[696, 27], [730, 2]]], ['Job3', 'loc3', 680, 'loc4', 935, [[827, 33]]]]
+Search Successful!
+   Strategy = 'astar with full cycle checking'
+   Solution cost = 0
+   Goal state: Action= "deliver(Job1)", S212, g-value = 0, (From S207)
+    Carrying: [] (load 0 grams)
+    State time = 969 loc = loc2 earned so far = 144
+    Unstarted Jobs.[]
+----------------------------
+Solution Path:
+Action= "START", S0, g-value = 0, (Initial State)
+    Carrying: [] (load 0 grams)
+    State time = 420 loc = home earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job3']
+ ==> Action= "first_pickup(Job0)", S1, g-value = 0, (From S0)
+    Carrying: ['Job0'] (load 420 grams)
+    State time = 605 loc = loc1 earned so far = 0
+    Unstarted Jobs.['Job1', 'Job2', 'Job3']
+ ==> Action= "deliver(Job0)", S5, g-value = 0, (From S1)
+    Carrying: [] (load 0 grams)
+    State time = 619 loc = loc3 earned so far = 45
+    Unstarted Jobs.['Job1', 'Job2', 'Job3']
+ ==> Action= "pickup(Job2)", S170, g-value = 0, (From S5)
+    Carrying: ['Job2'] (load 4552 grams)
+    State time = 665 loc = loc1 earned so far = 45
+    Unstarted Jobs.['Job1', 'Job3']
+ ==> Action= "deliver(Job2)", S179, g-value = 0, (From S170)
+    Carrying: [] (load 0 grams)
+    State time = 679 loc = loc3 earned so far = 72
+    Unstarted Jobs.['Job1', 'Job3']
+ ==> Action= "pickup(Job3)", S191, g-value = 0, (From S179)
+    Carrying: ['Job3'] (load 935 grams)
+    State time = 680 loc = loc3 earned so far = 72
+    Unstarted Jobs.['Job1']
+ ==> Action= "deliver(Job3)", S199, g-value = 0, (From S191)
+    Carrying: [] (load 0 grams)
+    State time = 709 loc = loc4 earned so far = 105
+    Unstarted Jobs.['Job1']
+ ==> Action= "pickup(Job1)", S207, g-value = 0, (From S199)
+    Carrying: ['Job1'] (load 4767 grams)
+    State time = 952 loc = loc0 earned so far = 105
+    Unstarted Jobs.[]
+ ==> Action= "deliver(Job1)", S212, g-value = 0, (From S207)
+    Carrying: [] (load 0 grams)
+    State time = 969 loc = loc2 earned so far = 144
+    Unstarted Jobs.[]
+
+----------------------------
+Search time = 0.01999999999999602, nodes expanded = 219, states generated = 219, states cycle check pruned = 0
+=======================================================
+    Test 11
+=======================================================
+   map = [['loc0', 'loc1', 'loc2', 'loc3', 'loc4', 'loc5', 'loc6'], [['loc0', 'loc1', 26], ['loc0', 'loc2', 38], ['loc0', 'loc3', 33], ['loc0', 'loc4', 18], ['loc0', 'loc5', 14], ['loc0', 'loc6', 39], ['loc1', 'loc2', 20], ['loc1', 'loc3', 19], ['loc1', 'loc4', 37], ['loc1', 'loc5', 33], ['loc1', 'loc6', 46], ['loc2', 'loc3', 6], ['loc2', 'loc4', 42], ['loc2', 'loc5', 38], ['loc2', 'loc6', 38], ['loc3', 'loc4', 35], ['loc3', 'loc5', 32], ['loc3', 'loc6', 33], ['loc4', 'loc5', 4], ['loc4', 'loc6', 24], ['loc5', 'loc6', 25]]]
+   jobs = [['Job0', 'loc2', 694, 'loc6', 3476, [[747, 26], [863, 3]]], ['Job1', 'loc6', 582, 'loc2', 1683, [[734, 30], [829, 5]]], ['Job2', 'loc6', 951, 'loc3', 4388, [[1048, 36], [1103, 22]]], ['Job3', 'loc3', 911, 'loc6', 2257, [[1018, 40], [1052, 35]]], ['Job4', 'loc2', 542, 'loc1', 2581, [[673, 36], [759, 12]]], ['Job5', 'loc6', 617, 'loc4', 1341, [[695, 45], [783, 28]]], ['Job6', 'loc1', 455, 'loc5', 4874, [[601, 38], [629, 31], [682, 9]]]]
+Search Successful!
+   Strategy = 'astar with full cycle checking'
+   Solution cost = 0
+   Goal state: Action= "deliver(Job3)", S2312, g-value = 0, (From S2310)
+    Carrying: [] (load 0 grams)
+    State time = 1017 loc = loc6 earned so far = 251
+    Unstarted Jobs.[]
+----------------------------
+Solution Path:
+Action= "START", S0, g-value = 0, (Initial State)
+    Carrying: [] (load 0 grams)
+    State time = 420 loc = home earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job3', 'Job4', 'Job5', 'Job6']
+ ==> Action= "first_pickup(Job4)", S5, g-value = 0, (From S0)
+    Carrying: ['Job4'] (load 2581 grams)
+    State time = 542 loc = loc2 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job3', 'Job5', 'Job6']
+ ==> Action= "deliver(Job4)", S440, g-value = 0, (From S5)
+    Carrying: [] (load 0 grams)
+    State time = 562 loc = loc1 earned so far = 36
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job3', 'Job5', 'Job6']
+ ==> Action= "pickup(Job6)", S1813, g-value = 0, (From S440)
+    Carrying: ['Job6'] (load 4874 grams)
+    State time = 562 loc = loc1 earned so far = 36
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job3', 'Job5']
+ ==> Action= "deliver(Job6)", S1839, g-value = 0, (From S1813)
+    Carrying: [] (load 0 grams)
+    State time = 595 loc = loc5 earned so far = 74
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job3', 'Job5']
+ ==> Action= "pickup(Job5)", S1893, g-value = 0, (From S1839)
+    Carrying: ['Job5'] (load 1341 grams)
+    State time = 620 loc = loc6 earned so far = 74
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job3']
+ ==> Action= "deliver(Job5)", S1915, g-value = 0, (From S1893)
+    Carrying: [] (load 0 grams)
+    State time = 644 loc = loc4 earned so far = 119
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job3']
+ ==> Action= "pickup(Job1)", S1945, g-value = 0, (From S1915)
+    Carrying: ['Job1'] (load 1683 grams)
+    State time = 668 loc = loc6 earned so far = 119
+    Unstarted Jobs.['Job0', 'Job2', 'Job3']
+ ==> Action= "deliver(Job1)", S2159, g-value = 0, (From S1945)
+    Carrying: [] (load 0 grams)
+    State time = 706 loc = loc2 earned so far = 149
+    Unstarted Jobs.['Job0', 'Job2', 'Job3']
+ ==> Action= "pickup(Job0)", S2176, g-value = 0, (From S2159)
+    Carrying: ['Job0'] (load 3476 grams)
+    State time = 706 loc = loc2 earned so far = 149
+    Unstarted Jobs.['Job2', 'Job3']
+ ==> Action= "deliver(Job0)", S2296, g-value = 0, (From S2176)
+    Carrying: [] (load 0 grams)
+    State time = 744 loc = loc6 earned so far = 175
+    Unstarted Jobs.['Job2', 'Job3']
+ ==> Action= "pickup(Job2)", S2301, g-value = 0, (From S2296)
+    Carrying: ['Job2'] (load 4388 grams)
+    State time = 951 loc = loc6 earned so far = 175
+    Unstarted Jobs.['Job3']
+ ==> Action= "deliver(Job2)", S2307, g-value = 0, (From S2301)
+    Carrying: [] (load 0 grams)
+    State time = 984 loc = loc3 earned so far = 211
+    Unstarted Jobs.['Job3']
+ ==> Action= "pickup(Job3)", S2310, g-value = 0, (From S2307)
+    Carrying: ['Job3'] (load 2257 grams)
+    State time = 984 loc = loc3 earned so far = 211
+    Unstarted Jobs.[]
+ ==> Action= "deliver(Job3)", S2312, g-value = 0, (From S2310)
+    Carrying: [] (load 0 grams)
+    State time = 1017 loc = loc6 earned so far = 251
+    Unstarted Jobs.[]
+
+----------------------------
+Search time = 0.37000000000000455, nodes expanded = 2314, states generated = 2314, states cycle check pruned = 0
+=======================================================
+    Test 12
+=======================================================
+   map = [['loc0', 'loc1', 'loc2', 'loc3', 'loc4', 'loc5'], [['loc0', 'loc1', 49], ['loc0', 'loc2', 27], ['loc0', 'loc3', 31], ['loc0', 'loc4', 8], ['loc0', 'loc5', 20], ['loc1', 'loc2', 35], ['loc1', 'loc3', 26], ['loc1', 'loc4', 51], ['loc1', 'loc5', 46], ['loc2', 'loc3', 34], ['loc2', 'loc4', 34], ['loc2', 'loc5', 39], ['loc3', 'loc4', 30], ['loc3', 'loc5', 21], ['loc4', 'loc5', 13]]]
+   jobs = [['Job0', 'loc3', 893, 'loc2', 3790, [[941, 38], [1018, 15]]], ['Job1', 'loc4', 839, 'loc5', 1210, [[863, 30], [953, 8]]], ['Job2', 'loc3', 477, 'loc4', 2733, [[600, 26], [630, 16], [668, 7]]]]
+Search Successful!
+   Strategy = 'astar with full cycle checking'
+   Solution cost = 0
+   Goal state: Action= "deliver(Job0)", S49, g-value = 0, (From S46)
+    Carrying: [] (load 0 grams)
+    State time = 927 loc = loc2 earned so far = 94
+    Unstarted Jobs.[]
+----------------------------
+Solution Path:
+Action= "START", S0, g-value = 0, (Initial State)
+    Carrying: [] (load 0 grams)
+    State time = 420 loc = home earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job2']
+ ==> Action= "first_pickup(Job2)", S3, g-value = 0, (From S0)
+    Carrying: ['Job2'] (load 2733 grams)
+    State time = 477 loc = loc3 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1']
+ ==> Action= "deliver(Job2)", S33, g-value = 0, (From S3)
+    Carrying: [] (load 0 grams)
+    State time = 507 loc = loc4 earned so far = 26
+    Unstarted Jobs.['Job0', 'Job1']
+ ==> Action= "pickup(Job1)", S40, g-value = 0, (From S33)
+    Carrying: ['Job1'] (load 1210 grams)
+    State time = 839 loc = loc4 earned so far = 26
+    Unstarted Jobs.['Job0']
+ ==> Action= "deliver(Job1)", S43, g-value = 0, (From S40)
+    Carrying: [] (load 0 grams)
+    State time = 852 loc = loc5 earned so far = 56
+    Unstarted Jobs.['Job0']
+ ==> Action= "pickup(Job0)", S46, g-value = 0, (From S43)
+    Carrying: ['Job0'] (load 3790 grams)
+    State time = 893 loc = loc3 earned so far = 56
+    Unstarted Jobs.[]
+ ==> Action= "deliver(Job0)", S49, g-value = 0, (From S46)
+    Carrying: [] (load 0 grams)
+    State time = 927 loc = loc2 earned so far = 94
+    Unstarted Jobs.[]
+
+----------------------------
+Search time = 0.00999999999999801, nodes expanded = 51, states generated = 51, states cycle check pruned = 0
+=======================================================
+    Test 13
+=======================================================
+   map = [['loc0', 'loc1', 'loc2', 'loc3', 'loc4', 'loc5', 'loc6', 'loc7', 'loc8'], [['loc0', 'loc1', 28], ['loc0', 'loc2', 46], ['loc0', 'loc3', 10], ['loc0', 'loc4', 15], ['loc0', 'loc5', 23], ['loc0', 'loc6', 48], ['loc0', 'loc7', 15], ['loc0', 'loc8', 26], ['loc1', 'loc2', 20], ['loc1', 'loc3', 18], ['loc1', 'loc4', 15], ['loc1', 'loc5', 38], ['loc1', 'loc6', 42], ['loc1', 'loc7', 40], ['loc1', 'loc8', 15], ['loc2', 'loc3', 36], ['loc2', 'loc4', 35], ['loc2', 'loc5', 50], ['loc2', 'loc6', 39], ['loc2', 'loc7', 56], ['loc2', 'loc8', 33], ['loc3', 'loc4', 9], ['loc3', 'loc5', 25], ['loc3', 'loc6', 42], ['loc3', 'loc7', 22], ['loc3', 'loc8', 20], ['loc4', 'loc5', 33], ['loc4', 'loc6', 49], ['loc4', 'loc7', 29], ['loc4', 'loc8', 12], ['loc5', 'loc6', 33], ['loc5', 'loc7', 14], ['loc5', 'loc8', 45], ['loc6', 'loc7', 46], ['loc6', 'loc8', 56], ['loc7', 'loc8', 41]]]
+   jobs = [['Job0', 'loc5', 766, 'loc2', 4340, [[933, 34], [1028, 15]]], ['Job1', 'loc4', 616, 'loc7', 239, [[676, 40], [795, 19]]], ['Job2', 'loc2', 783, 'loc8', 2007, [[879, 41], [903, 25], [925, 5]]], ['Job3', 'loc3', 565, 'loc8', 2455, [[630, 35], [736, 24], [836, 8], [853, 2]]]]
+Search Successful!
+   Strategy = 'astar with full cycle checking'
+   Solution cost = 0
+   Goal state: Action= "deliver(Job2)", S800, g-value = 0, (From S790)
+    Carrying: [] (load 0 grams)
+    State time = 849 loc = loc8 earned so far = 150
+    Unstarted Jobs.[]
+----------------------------
+Solution Path:
+Action= "START", S0, g-value = 0, (Initial State)
+    Carrying: [] (load 0 grams)
+    State time = 420 loc = home earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job3']
+ ==> Action= "first_pickup(Job3)", S4, g-value = 0, (From S0)
+    Carrying: ['Job3'] (load 2455 grams)
+    State time = 565 loc = loc3 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job2']
+ ==> Action= "deliver(Job3)", S12, g-value = 0, (From S4)
+    Carrying: [] (load 0 grams)
+    State time = 585 loc = loc8 earned so far = 35
+    Unstarted Jobs.['Job0', 'Job1', 'Job2']
+ ==> Action= "pickup(Job1)", S454, g-value = 0, (From S12)
+    Carrying: ['Job1'] (load 239 grams)
+    State time = 616 loc = loc4 earned so far = 35
+    Unstarted Jobs.['Job0', 'Job2']
+ ==> Action= "deliver(Job1)", S716, g-value = 0, (From S454)
+    Carrying: [] (load 0 grams)
+    State time = 645 loc = loc7 earned so far = 75
+    Unstarted Jobs.['Job0', 'Job2']
+ ==> Action= "pickup(Job0)", S723, g-value = 0, (From S716)
+    Carrying: ['Job0'] (load 4340 grams)
+    State time = 766 loc = loc5 earned so far = 75
+    Unstarted Jobs.['Job2']
+ ==> Action= "deliver(Job0)", S780, g-value = 0, (From S723)
+    Carrying: [] (load 0 grams)
+    State time = 816 loc = loc2 earned so far = 109
+    Unstarted Jobs.['Job2']
+ ==> Action= "pickup(Job2)", S790, g-value = 0, (From S780)
+    Carrying: ['Job2'] (load 2007 grams)
+    State time = 816 loc = loc2 earned so far = 109
+    Unstarted Jobs.[]
+ ==> Action= "deliver(Job2)", S800, g-value = 0, (From S790)
+    Carrying: [] (load 0 grams)
+    State time = 849 loc = loc8 earned so far = 150
+    Unstarted Jobs.[]
+
+----------------------------
+Search time = 0.07000000000000028, nodes expanded = 804, states generated = 804, states cycle check pruned = 0
+=======================================================
+    Test 14
+=======================================================
+   map = [['loc0', 'loc1', 'loc2', 'loc3', 'loc4', 'loc5', 'loc6', 'loc7', 'loc8'], [['loc0', 'loc1', 6], ['loc0', 'loc2', 20], ['loc0', 'loc3', 37], ['loc0', 'loc4', 18], ['loc0', 'loc5', 44], ['loc0', 'loc6', 39], ['loc0', 'loc7', 28], ['loc0', 'loc8', 41], ['loc1', 'loc2', 16], ['loc1', 'loc3', 32], ['loc1', 'loc4', 16], ['loc1', 'loc5', 38], ['loc1', 'loc6', 34], ['loc1', 'loc7', 22], ['loc1', 'loc8', 35], ['loc2', 'loc3', 18], ['loc2', 'loc4', 6], ['loc2', 'loc5', 34], ['loc2', 'loc6', 21], ['loc2', 'loc7', 26], ['loc2', 'loc8', 33], ['loc3', 'loc4', 23], ['loc3', 'loc5', 26], ['loc3', 'loc6', 4], ['loc3', 'loc7', 29], ['loc3', 'loc8', 28], ['loc4', 'loc5', 40], ['loc4', 'loc6', 26], ['loc4', 'loc7', 31], ['loc4', 'loc8', 39], ['loc5', 'loc6', 22], ['loc5', 'loc7', 18], ['loc5', 'loc8', 5], ['loc6', 'loc7', 27], ['loc6', 'loc8', 24], ['loc7', 'loc8', 14]]]
+   jobs = [['Job0', 'loc2', 821, 'loc3', 689, [[891, 41], [974, 24]]], ['Job1', 'loc3', 519, 'loc8', 4049, [[623, 28], [736, 17]]], ['Job2', 'loc1', 954, 'loc8', 632, [[1018, 25], [1077, 3]]], ['Job3', 'loc2', 945, 'loc6', 4531, [[1052, 43], [1119, 35]]], ['Job4', 'loc4', 659, 'loc6', 2776, [[778, 27], [835, 7]]], ['Job5', 'loc5', 568, 'loc8', 2451, [[661, 37], [714, 31], [834, 7]]]]
+Search Successful!
+   Strategy = 'astar with full cycle checking'
+   Solution cost = 0
+   Goal state: Action= "deliver(Job3)", S17028, g-value = 0, (From S17014)
+    Carrying: [] (load 0 grams)
+    State time = 1020 loc = loc6 earned so far = 201
+    Unstarted Jobs.[]
+----------------------------
+Solution Path:
+Action= "START", S0, g-value = 0, (Initial State)
+    Carrying: [] (load 0 grams)
+    State time = 420 loc = home earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job3', 'Job4', 'Job5']
+ ==> Action= "first_pickup(Job1)", S2, g-value = 0, (From S0)
+    Carrying: ['Job1'] (load 4049 grams)
+    State time = 519 loc = loc3 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job2', 'Job3', 'Job4', 'Job5']
+ ==> Action= "pickup(Job5)", S645, g-value = 0, (From S2)
+    Carrying: ['Job1', 'Job5'] (load 6500 grams)
+    State time = 568 loc = loc5 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job2', 'Job3', 'Job4']
+ ==> Action= "deliver(Job1)", S663, g-value = 0, (From S645)
+    Carrying: ['Job5'] (load 2451 grams)
+    State time = 573 loc = loc8 earned so far = 28
+    Unstarted Jobs.['Job0', 'Job2', 'Job3', 'Job4']
+ ==> Action= "deliver(Job5)", S804, g-value = 0, (From S663)
+    Carrying: [] (load 0 grams)
+    State time = 573 loc = loc8 earned so far = 65
+    Unstarted Jobs.['Job0', 'Job2', 'Job3', 'Job4']
+ ==> Action= "pickup(Job4)", S6076, g-value = 0, (From S804)
+    Carrying: ['Job4'] (load 2776 grams)
+    State time = 659 loc = loc4 earned so far = 65
+    Unstarted Jobs.['Job0', 'Job2', 'Job3']
+ ==> Action= "deliver(Job4)", S16714, g-value = 0, (From S6076)
+    Carrying: [] (load 0 grams)
+    State time = 685 loc = loc6 earned so far = 92
+    Unstarted Jobs.['Job0', 'Job2', 'Job3']
+ ==> Action= "pickup(Job0)", S16739, g-value = 0, (From S16714)
+    Carrying: ['Job0'] (load 689 grams)
+    State time = 821 loc = loc2 earned so far = 92
+    Unstarted Jobs.['Job2', 'Job3']
+ ==> Action= "deliver(Job0)", S16937, g-value = 0, (From S16739)
+    Carrying: [] (load 0 grams)
+    State time = 839 loc = loc3 earned so far = 133
+    Unstarted Jobs.['Job2', 'Job3']
+ ==> Action= "pickup(Job3)", S16968, g-value = 0, (From S16937)
+    Carrying: ['Job3'] (load 4531 grams)
+    State time = 945 loc = loc2 earned so far = 133
+    Unstarted Jobs.['Job2']
+ ==> Action= "pickup(Job2)", S16993, g-value = 0, (From S16968)
+    Carrying: ['Job3', 'Job2'] (load 5163 grams)
+    State time = 961 loc = loc1 earned so far = 133
+    Unstarted Jobs.[]
+ ==> Action= "deliver(Job2)", S17014, g-value = 0, (From S16993)
+    Carrying: ['Job3'] (load 4531 grams)
+    State time = 996 loc = loc8 earned so far = 158
+    Unstarted Jobs.[]
+ ==> Action= "deliver(Job3)", S17028, g-value = 0, (From S17014)
+    Carrying: [] (load 0 grams)
+    State time = 1020 loc = loc6 earned so far = 201
+    Unstarted Jobs.[]
+
+----------------------------
+Search time = 1.8299999999999983, nodes expanded = 17039, states generated = 17039, states cycle check pruned = 0
+=======================================================
+    Test 15
+=======================================================
+   map = [['loc0', 'loc1', 'loc2', 'loc3', 'loc4', 'loc5', 'loc6'], [['loc0', 'loc1', 25], ['loc0', 'loc2', 26], ['loc0', 'loc3', 16], ['loc0', 'loc4', 8], ['loc0', 'loc5', 32], ['loc0', 'loc6', 11], ['loc1', 'loc2', 23], ['loc1', 'loc3', 11], ['loc1', 'loc4', 17], ['loc1', 'loc5', 41], ['loc1', 'loc6', 28], ['loc2', 'loc3', 26], ['loc2', 'loc4', 21], ['loc2', 'loc5', 20], ['loc2', 'loc6', 19], ['loc3', 'loc4', 9], ['loc3', 'loc5', 40], ['loc3', 'loc6', 23], ['loc4', 'loc5', 32], ['loc4', 'loc6', 13], ['loc5', 'loc6', 21]]]
+   jobs = [['Job0', 'loc5', 878, 'loc1', 1201, [[955, 35]]], ['Job1', 'loc4', 887, 'loc6', 4901, [[941, 26], [1031, 8]]], ['Job2', 'loc6', 474, 'loc1', 1938, [[552, 45], [623, 25]]], ['Job3', 'loc5', 537, 'loc2', 2976, [[611, 35], [618, 20]]], ['Job4', 'loc0', 899, 'loc4', 2266, [[927, 34], [979, 22]]], ['Job5', 'loc3', 475, 'loc4', 2712, [[509, 40], [567, 26]]], ['Job6', 'loc1', 939, 'loc6', 4081, [[1025, 28], [1137, 12]]]]
+Search Successful!
+   Strategy = 'astar with full cycle checking'
+   Solution cost = 18
+   Goal state: Action= "deliver(Job1)", S7793, g-value = 18, (From S7779)
+    Carrying: [] (load 0 grams)
+    State time = 969 loc = loc6 earned so far = 225
+    Unstarted Jobs.[]
+----------------------------
+Solution Path:
+Action= "START", S0, g-value = 0, (Initial State)
+    Carrying: [] (load 0 grams)
+    State time = 420 loc = home earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job3', 'Job4', 'Job5', 'Job6']
+ ==> Action= "first_pickup(Job2)", S3, g-value = 0, (From S0)
+    Carrying: ['Job2'] (load 1938 grams)
+    State time = 474 loc = loc6 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job5', 'Job6']
+ ==> Action= "pickup(Job5)", S19, g-value = 0, (From S3)
+    Carrying: ['Job2', 'Job5'] (load 4650 grams)
+    State time = 497 loc = loc3 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job6']
+ ==> Action= "deliver(Job5)", S44, g-value = 0, (From S19)
+    Carrying: ['Job2'] (load 1938 grams)
+    State time = 506 loc = loc4 earned so far = 40
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job6']
+ ==> Action= "deliver(Job2)", S6360, g-value = 0, (From S44)
+    Carrying: [] (load 0 grams)
+    State time = 523 loc = loc1 earned so far = 85
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job6']
+ ==> Action= "pickup(Job3)", S6390, g-value = 0, (From S6360)
+    Carrying: ['Job3'] (load 2976 grams)
+    State time = 564 loc = loc5 earned so far = 85
+    Unstarted Jobs.['Job0', 'Job1', 'Job4', 'Job6']
+ ==> Action= "deliver(Job3)", S7040, g-value = 0, (From S6390)
+    Carrying: [] (load 0 grams)
+    State time = 584 loc = loc2 earned so far = 120
+    Unstarted Jobs.['Job0', 'Job1', 'Job4', 'Job6']
+ ==> Action= "pickup(Job0)", S7061, g-value = 0, (From S7040)
+    Carrying: ['Job0'] (load 1201 grams)
+    State time = 878 loc = loc5 earned so far = 120
+    Unstarted Jobs.['Job1', 'Job4', 'Job6']
+ ==> Action= "pickup(Job4)", S7672, g-value = 0, (From S7061)
+    Carrying: ['Job0', 'Job4'] (load 3467 grams)
+    State time = 910 loc = loc0 earned so far = 120
+    Unstarted Jobs.['Job1', 'Job6']
+ ==> Action= "deliver(Job4)", S7690, g-value = 0, (From S7672)
+    Carrying: ['Job0'] (load 1201 grams)
+    State time = 918 loc = loc4 earned so far = 154
+    Unstarted Jobs.['Job1', 'Job6']
+ ==> Action= "deliver(Job0)", S7711, g-value = 0, (From S7690)
+    Carrying: [] (load 0 grams)
+    State time = 935 loc = loc1 earned so far = 189
+    Unstarted Jobs.['Job1', 'Job6']
+ ==> Action= "pickup(Job6)", S7747, g-value = 0, (From S7711)
+    Carrying: ['Job6'] (load 4081 grams)
+    State time = 939 loc = loc1 earned so far = 189
+    Unstarted Jobs.['Job1']
+ ==> Action= "pickup(Job1)", S7765, g-value = 0, (From S7747)
+    Carrying: ['Job6', 'Job1'] (load 8982 grams)
+    State time = 956 loc = loc4 earned so far = 189
+    Unstarted Jobs.[]
+ ==> Action= "deliver(Job6)", S7779, g-value = 0, (From S7765)
+    Carrying: ['Job1'] (load 4901 grams)
+    State time = 969 loc = loc6 earned so far = 217
+    Unstarted Jobs.[]
+ ==> Action= "deliver(Job1)", S7793, g-value = 18, (From S7779)
+    Carrying: [] (load 0 grams)
+    State time = 969 loc = loc6 earned so far = 225
+    Unstarted Jobs.[]
+
+----------------------------
+Search time = 12.04, nodes expanded = 103849, states generated = 103849, states cycle check pruned = 0
+=======================================================
+    Test 16
+=======================================================
+   map = [['loc0', 'loc1', 'loc2', 'loc3', 'loc4', 'loc5'], [['loc0', 'loc1', 28], ['loc0', 'loc2', 36], ['loc0', 'loc3', 42], ['loc0', 'loc4', 22], ['loc0', 'loc5', 40], ['loc1', 'loc2', 17], ['loc1', 'loc3', 34], ['loc1', 'loc4', 16], ['loc1', 'loc5', 29], ['loc2', 'loc3', 19], ['loc2', 'loc4', 32], ['loc2', 'loc5', 13], ['loc3', 'loc4', 47], ['loc3', 'loc5', 6], ['loc4', 'loc5', 43]]]
+   jobs = [['Job0', 'loc2', 893, 'loc5', 3783, [[933, 28], [1027, 23], [1123, 13]]], ['Job1', 'loc3', 990, 'loc4', 1358, [[1046, 43]]], ['Job2', 'loc1', 619, 'loc3', 4933, [[702, 25], [742, 7]]], ['Job3', 'loc2', 435, 'loc3', 1322, [[504, 38]]], ['Job4', 'loc5', 506, 'loc4', 4300, [[600, 35], [636, 15]]], ['Job5', 'loc5', 584, 'loc3', 263, [[604, 39], [635, 22], [737, 16]]]]
+Search Successful!
+   Strategy = 'astar with full cycle checking'
+   Solution cost = 0
+   Goal state: Action= "deliver(Job1)", S6177, g-value = 0, (From S6171)
+    Carrying: [] (load 0 grams)
+    State time = 1037 loc = loc4 earned so far = 208
+    Unstarted Jobs.[]
+----------------------------
+Solution Path:
+Action= "START", S0, g-value = 0, (Initial State)
+    Carrying: [] (load 0 grams)
+    State time = 420 loc = home earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job3', 'Job4', 'Job5']
+ ==> Action= "first_pickup(Job3)", S4, g-value = 0, (From S0)
+    Carrying: ['Job3'] (load 1322 grams)
+    State time = 435 loc = loc2 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job4', 'Job5']
+ ==> Action= "deliver(Job3)", S1676, g-value = 0, (From S4)
+    Carrying: [] (load 0 grams)
+    State time = 454 loc = loc3 earned so far = 38
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job4', 'Job5']
+ ==> Action= "pickup(Job4)", S3144, g-value = 0, (From S1676)
+    Carrying: ['Job4'] (load 4300 grams)
+    State time = 506 loc = loc5 earned so far = 38
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job5']
+ ==> Action= "deliver(Job4)", S5578, g-value = 0, (From S3144)
+    Carrying: [] (load 0 grams)
+    State time = 549 loc = loc4 earned so far = 73
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job5']
+ ==> Action= "pickup(Job5)", S5589, g-value = 0, (From S5578)
+    Carrying: ['Job5'] (load 263 grams)
+    State time = 592 loc = loc5 earned so far = 73
+    Unstarted Jobs.['Job0', 'Job1', 'Job2']
+ ==> Action= "deliver(Job5)", S6064, g-value = 0, (From S5589)
+    Carrying: [] (load 0 grams)
+    State time = 598 loc = loc3 earned so far = 112
+    Unstarted Jobs.['Job0', 'Job1', 'Job2']
+ ==> Action= "pickup(Job2)", S6081, g-value = 0, (From S6064)
+    Carrying: ['Job2'] (load 4933 grams)
+    State time = 632 loc = loc1 earned so far = 112
+    Unstarted Jobs.['Job0', 'Job1']
+ ==> Action= "deliver(Job2)", S6102, g-value = 0, (From S6081)
+    Carrying: [] (load 0 grams)
+    State time = 666 loc = loc3 earned so far = 137
+    Unstarted Jobs.['Job0', 'Job1']
+ ==> Action= "pickup(Job0)", S6159, g-value = 0, (From S6102)
+    Carrying: ['Job0'] (load 3783 grams)
+    State time = 893 loc = loc2 earned so far = 137
+    Unstarted Jobs.['Job1']
+ ==> Action= "deliver(Job0)", S6165, g-value = 0, (From S6159)
+    Carrying: [] (load 0 grams)
+    State time = 906 loc = loc5 earned so far = 165
+    Unstarted Jobs.['Job1']
+ ==> Action= "pickup(Job1)", S6171, g-value = 0, (From S6165)
+    Carrying: ['Job1'] (load 1358 grams)
+    State time = 990 loc = loc3 earned so far = 165
+    Unstarted Jobs.[]
+ ==> Action= "deliver(Job1)", S6177, g-value = 0, (From S6171)
+    Carrying: [] (load 0 grams)
+    State time = 1037 loc = loc4 earned so far = 208
+    Unstarted Jobs.[]
+
+----------------------------
+Search time = 0.6099999999999994, nodes expanded = 6181, states generated = 6181, states cycle check pruned = 0
+=======================================================
+    Test 17
+=======================================================
+   map = [['loc0', 'loc1', 'loc2', 'loc3', 'loc4', 'loc5', 'loc6'], [['loc0', 'loc1', 36], ['loc0', 'loc2', 37], ['loc0', 'loc3', 44], ['loc0', 'loc4', 44], ['loc0', 'loc5', 31], ['loc0', 'loc6', 53], ['loc1', 'loc2', 34], ['loc1', 'loc3', 18], ['loc1', 'loc4', 11], ['loc1', 'loc5', 34], ['loc1', 'loc6', 27], ['loc2', 'loc3', 23], ['loc2', 'loc4', 31], ['loc2', 'loc5', 7], ['loc2', 'loc6', 26], ['loc3', 'loc4', 9], ['loc3', 'loc5', 27], ['loc3', 'loc6', 10], ['loc4', 'loc5', 33], ['loc4', 'loc6', 17], ['loc5', 'loc6', 31]]]
+   jobs = [['Job0', 'loc4', 740, 'loc6', 1104, [[869, 40], [959, 25], [1003, 12]]], ['Job1', 'loc3', 793, 'loc5', 1146, [[924, 38]]], ['Job2', 'loc6', 447, 'loc3', 2431, [[499, 44]]], ['Job3', 'loc6', 891, 'loc1', 1951, [[934, 43], [1012, 30], [1111, 7]]], ['Job4', 'loc4', 785, 'loc2', 194, [[933, 44]]], ['Job5', 'loc6', 951, 'loc2', 3284, [[1072, 30]]]]
+Search Successful!
+   Strategy = 'astar with full cycle checking'
+   Solution cost = 0
+   Goal state: Action= "deliver(Job5)", S44337, g-value = 0, (From S44317)
+    Carrying: [] (load 0 grams)
+    State time = 977 loc = loc2 earned so far = 239
+    Unstarted Jobs.[]
+----------------------------
+Solution Path:
+Action= "START", S0, g-value = 0, (Initial State)
+    Carrying: [] (load 0 grams)
+    State time = 420 loc = home earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job3', 'Job4', 'Job5']
+ ==> Action= "first_pickup(Job2)", S3, g-value = 0, (From S0)
+    Carrying: ['Job2'] (load 2431 grams)
+    State time = 447 loc = loc6 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job5']
+ ==> Action= "deliver(Job2)", S10, g-value = 0, (From S3)
+    Carrying: [] (load 0 grams)
+    State time = 457 loc = loc3 earned so far = 44
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job5']
+ ==> Action= "pickup(Job4)", S24245, g-value = 0, (From S10)
+    Carrying: ['Job4'] (load 194 grams)
+    State time = 785 loc = loc4 earned so far = 44
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job5']
+ ==> Action= "pickup(Job0)", S43335, g-value = 0, (From S24245)
+    Carrying: ['Job4', 'Job0'] (load 1298 grams)
+    State time = 785 loc = loc4 earned so far = 44
+    Unstarted Jobs.['Job1', 'Job3', 'Job5']
+ ==> Action= "deliver(Job0)", S43355, g-value = 0, (From S43335)
+    Carrying: ['Job4'] (load 194 grams)
+    State time = 802 loc = loc6 earned so far = 84
+    Unstarted Jobs.['Job1', 'Job3', 'Job5']
+ ==> Action= "pickup(Job1)", S44148, g-value = 0, (From S43355)
+    Carrying: ['Job4', 'Job1'] (load 1340 grams)
+    State time = 812 loc = loc3 earned so far = 84
+    Unstarted Jobs.['Job3', 'Job5']
+ ==> Action= "deliver(Job4)", S44175, g-value = 0, (From S44148)
+    Carrying: ['Job1'] (load 1146 grams)
+    State time = 835 loc = loc2 earned so far = 128
+    Unstarted Jobs.['Job3', 'Job5']
+ ==> Action= "deliver(Job1)", S44214, g-value = 0, (From S44175)
+    Carrying: [] (load 0 grams)
+    State time = 842 loc = loc5 earned so far = 166
+    Unstarted Jobs.['Job3', 'Job5']
+ ==> Action= "pickup(Job3)", S44248, g-value = 0, (From S44214)
+    Carrying: ['Job3'] (load 1951 grams)
+    State time = 891 loc = loc6 earned so far = 166
+    Unstarted Jobs.['Job5']
+ ==> Action= "deliver(Job3)", S44295, g-value = 0, (From S44248)
+    Carrying: [] (load 0 grams)
+    State time = 918 loc = loc1 earned so far = 209
+    Unstarted Jobs.['Job5']
+ ==> Action= "pickup(Job5)", S44317, g-value = 0, (From S44295)
+    Carrying: ['Job5'] (load 3284 grams)
+    State time = 951 loc = loc6 earned so far = 209
+    Unstarted Jobs.[]
+ ==> Action= "deliver(Job5)", S44337, g-value = 0, (From S44317)
+    Carrying: [] (load 0 grams)
+    State time = 977 loc = loc2 earned so far = 239
+    Unstarted Jobs.[]
+
+----------------------------
+Search time = 5.350000000000001, nodes expanded = 44358, states generated = 44358, states cycle check pruned = 0
+=======================================================
+    Test 18
+=======================================================
+   map = [['loc0', 'loc1', 'loc2', 'loc3', 'loc4', 'loc5', 'loc6'], [['loc0', 'loc1', 41], ['loc0', 'loc2', 48], ['loc0', 'loc3', 9], ['loc0', 'loc4', 26], ['loc0', 'loc5', 34], ['loc0', 'loc6', 23], ['loc1', 'loc2', 15], ['loc1', 'loc3', 33], ['loc1', 'loc4', 16], ['loc1', 'loc5', 10], ['loc1', 'loc6', 25], ['loc2', 'loc3', 39], ['loc2', 'loc4', 27], ['loc2', 'loc5', 25], ['loc2', 'loc6', 26], ['loc3', 'loc4', 19], ['loc3', 'loc5', 28], ['loc3', 'loc6', 14], ['loc4', 'loc5', 9], ['loc4', 'loc6', 16], ['loc5', 'loc6', 24]]]
+   jobs = [['Job0', 'loc0', 861, 'loc6', 3223, [[992, 38], [1085, 17]]], ['Job1', 'loc3', 712, 'loc0', 16, [[812, 42]]], ['Job2', 'loc3', 501, 'loc0', 193, [[621, 35]]], ['Job3', 'loc2', 801, 'loc6', 4093, [[836, 41]]], ['Job4', 'loc5', 516, 'loc6', 4498, [[562, 43], [642, 25]]], ['Job5', 'loc0', 951, 'loc2', 2701, [[1029, 45], [1100, 40]]], ['Job6', 'loc0', 698, 'loc5', 789, [[833, 35]]]]
+Search Successful!
+   Strategy = 'astar with full cycle checking'
+   Solution cost = 0
+   Goal state: Action= "deliver(Job5)", S9125, g-value = 0, (From S9114)
+    Carrying: [] (load 0 grams)
+    State time = 999 loc = loc2 earned so far = 279
+    Unstarted Jobs.[]
+----------------------------
+Solution Path:
+Action= "START", S0, g-value = 0, (Initial State)
+    Carrying: [] (load 0 grams)
+    State time = 420 loc = home earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job3', 'Job4', 'Job5', 'Job6']
+ ==> Action= "first_pickup(Job2)", S3, g-value = 0, (From S0)
+    Carrying: ['Job2'] (load 193 grams)
+    State time = 501 loc = loc3 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job4', 'Job5', 'Job6']
+ ==> Action= "pickup(Job4)", S18, g-value = 0, (From S3)
+    Carrying: ['Job2', 'Job4'] (load 4691 grams)
+    State time = 529 loc = loc5 earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job5', 'Job6']
+ ==> Action= "deliver(Job4)", S42, g-value = 0, (From S18)
+    Carrying: ['Job2'] (load 193 grams)
+    State time = 553 loc = loc6 earned so far = 43
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job5', 'Job6']
+ ==> Action= "deliver(Job2)", S6171, g-value = 0, (From S42)
+    Carrying: [] (load 0 grams)
+    State time = 576 loc = loc0 earned so far = 78
+    Unstarted Jobs.['Job0', 'Job1', 'Job3', 'Job5', 'Job6']
+ ==> Action= "pickup(Job1)", S7392, g-value = 0, (From S6171)
+    Carrying: ['Job1'] (load 16 grams)
+    State time = 712 loc = loc3 earned so far = 78
+    Unstarted Jobs.['Job0', 'Job3', 'Job5', 'Job6']
+ ==> Action= "deliver(Job1)", S7410, g-value = 0, (From S7392)
+    Carrying: [] (load 0 grams)
+    State time = 721 loc = loc0 earned so far = 120
+    Unstarted Jobs.['Job0', 'Job3', 'Job5', 'Job6']
+ ==> Action= "pickup(Job6)", S8774, g-value = 0, (From S7410)
+    Carrying: ['Job6'] (load 789 grams)
+    State time = 721 loc = loc0 earned so far = 120
+    Unstarted Jobs.['Job0', 'Job3', 'Job5']
+ ==> Action= "deliver(Job6)", S8797, g-value = 0, (From S8774)
+    Carrying: [] (load 0 grams)
+    State time = 755 loc = loc5 earned so far = 155
+    Unstarted Jobs.['Job0', 'Job3', 'Job5']
+ ==> Action= "pickup(Job3)", S8946, g-value = 0, (From S8797)
+    Carrying: ['Job3'] (load 4093 grams)
+    State time = 801 loc = loc2 earned so far = 155
+    Unstarted Jobs.['Job0', 'Job5']
+ ==> Action= "deliver(Job3)", S9046, g-value = 0, (From S8946)
+    Carrying: [] (load 0 grams)
+    State time = 827 loc = loc6 earned so far = 196
+    Unstarted Jobs.['Job0', 'Job5']
+ ==> Action= "pickup(Job0)", S9088, g-value = 0, (From S9046)
+    Carrying: ['Job0'] (load 3223 grams)
+    State time = 861 loc = loc0 earned so far = 196
+    Unstarted Jobs.['Job5']
+ ==> Action= "deliver(Job0)", S9102, g-value = 0, (From S9088)
+    Carrying: [] (load 0 grams)
+    State time = 884 loc = loc6 earned so far = 234
+    Unstarted Jobs.['Job5']
+ ==> Action= "pickup(Job5)", S9114, g-value = 0, (From S9102)
+    Carrying: ['Job5'] (load 2701 grams)
+    State time = 951 loc = loc0 earned so far = 234
+    Unstarted Jobs.[]
+ ==> Action= "deliver(Job5)", S9125, g-value = 0, (From S9114)
+    Carrying: [] (load 0 grams)
+    State time = 999 loc = loc2 earned so far = 279
+    Unstarted Jobs.[]
+
+----------------------------
+Search time = 1.2900000000000063, nodes expanded = 9134, states generated = 9134, states cycle check pruned = 0
+=======================================================
+    Test 19
+=======================================================
+   map = [['loc0', 'loc1', 'loc2', 'loc3', 'loc4', 'loc5', 'loc6', 'loc7', 'loc8', 'loc9'], [['loc0', 'loc1', 29], ['loc0', 'loc2', 13], ['loc0', 'loc3', 36], ['loc0', 'loc4', 28], ['loc0', 'loc5', 46], ['loc0', 'loc6', 30], ['loc0', 'loc7', 57], ['loc0', 'loc8', 20], ['loc0', 'loc9', 48], ['loc1', 'loc2', 19], ['loc1', 'loc3', 9], ['loc1', 'loc4', 3], ['loc1', 'loc5', 21], ['loc1', 'loc6', 16], ['loc1', 'loc7', 31], ['loc1', 'loc8', 10], ['loc1', 'loc9', 23], ['loc2', 'loc3', 25], ['loc2', 'loc4', 18], ['loc2', 'loc5', 33], ['loc2', 'loc6', 17], ['loc2', 'loc7', 50], ['loc2', 'loc8', 14], ['loc2', 'loc9', 42], ['loc3', 'loc4', 8], ['loc3', 'loc5', 13], ['loc3', 'loc6', 14], ['loc3', 'loc7', 30], ['loc3', 'loc8', 19], ['loc3', 'loc9', 24], ['loc4', 'loc5', 20], ['loc4', 'loc6', 13], ['loc4', 'loc7', 33], ['loc4', 'loc8', 11], ['loc4', 'loc9', 26], ['loc5', 'loc6', 17], ['loc5', 'loc7', 36], ['loc5', 'loc8', 31], ['loc5', 'loc9', 33], ['loc6', 'loc7', 44], ['loc6', 'loc8', 21], ['loc6', 'loc9', 38], ['loc7', 'loc8', 37], ['loc7', 'loc9', 9], ['loc8', 'loc9', 28]]]
+   jobs = [['Job0', 'loc0', 501, 'loc4', 4107, [[596, 37], [663, 19]]], ['Job1', 'loc3', 780, 'loc5', 4917, [[862, 42], [910, 27], [994, 2]]], ['Job2', 'loc4', 891, 'loc0', 2148, [[948, 40], [998, 16]]], ['Job3', 'loc0', 600, 'loc9', 520, [[683, 35], [742, 18]]], ['Job4', 'loc5', 713, 'loc7', 1916, [[782, 41]]]]
+Search Successful!
+   Strategy = 'astar with full cycle checking'
+   Solution cost = 0
+   Goal state: Action= "deliver(Job2)", S1950, g-value = 0, (From S1942)
+    Carrying: [] (load 0 grams)
+    State time = 919 loc = loc0 earned so far = 195
+    Unstarted Jobs.[]
+----------------------------
+Solution Path:
+Action= "START", S0, g-value = 0, (Initial State)
+    Carrying: [] (load 0 grams)
+    State time = 420 loc = home earned so far = 0
+    Unstarted Jobs.['Job0', 'Job1', 'Job2', 'Job3', 'Job4']
+ ==> Action= "first_pickup(Job0)", S1, g-value = 0, (From S0)
+    Carrying: ['Job0'] (load 4107 grams)
+    State time = 501 loc = loc0 earned so far = 0
+    Unstarted Jobs.['Job1', 'Job2', 'Job3', 'Job4']
+ ==> Action= "deliver(Job0)", S6, g-value = 0, (From S1)
+    Carrying: [] (load 0 grams)
+    State time = 529 loc = loc4 earned so far = 37
+    Unstarted Jobs.['Job1', 'Job2', 'Job3', 'Job4']
+ ==> Action= "pickup(Job3)", S122, g-value = 0, (From S6)
+    Carrying: ['Job3'] (load 520 grams)
+    State time = 600 loc = loc0 earned so far = 37
+    Unstarted Jobs.['Job1', 'Job2', 'Job4']
+ ==> Action= "deliver(Job3)", S215, g-value = 0, (From S122)
+    Carrying: [] (load 0 grams)
+    State time = 648 loc = loc9 earned so far = 72
+    Unstarted Jobs.['Job1', 'Job2', 'Job4']
+ ==> Action= "pickup(Job4)", S726, g-value = 0, (From S215)
+    Carrying: ['Job4'] (load 1916 grams)
+    State time = 713 loc = loc5 earned so far = 72
+    Unstarted Jobs.['Job1', 'Job2']
+ ==> Action= "deliver(Job4)", S740, g-value = 0, (From S726)
+    Carrying: [] (load 0 grams)
+    State time = 749 loc = loc7 earned so far = 113
+    Unstarted Jobs.['Job1', 'Job2']
+ ==> Action= "pickup(Job1)", S777, g-value = 0, (From S740)
+    Carrying: ['Job1'] (load 4917 grams)
+    State time = 780 loc = loc3 earned so far = 113
+    Unstarted Jobs.['Job2']
+ ==> Action= "deliver(Job1)", S1932, g-value = 0, (From S777)
+    Carrying: [] (load 0 grams)
+    State time = 793 loc = loc5 earned so far = 155
+    Unstarted Jobs.['Job2']
+ ==> Action= "pickup(Job2)", S1942, g-value = 0, (From S1932)
+    Carrying: ['Job2'] (load 2148 grams)
+    State time = 891 loc = loc4 earned so far = 155
+    Unstarted Jobs.[]
+ ==> Action= "deliver(Job2)", S1950, g-value = 0, (From S1942)
+    Carrying: [] (load 0 grams)
+    State time = 919 loc = loc0 earned so far = 195
+    Unstarted Jobs.[]
+
+----------------------------
+Search time = 0.269999999999996, nodes expanded = 1957, states generated = 1957, states cycle check pruned = 0
